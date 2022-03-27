@@ -13,14 +13,14 @@ Responsive mockup
 ## User Stories
 
 As a user of the Space Invader game, I want to:
-    1. have fun playing the game
-    2. 
-    3. visit a retro looking game for an enjoyable/nostalgic experience
-    4. navigate through the website and game easily and fluidly
-    5. access instructions on how to play the game and game aims
-    6. see a scoreboard of local highscores
-    7. ...
-    8. ...
+  1. have fun playing the game
+  2. have easy to use controls to play the game with
+  3. visit a retro looking game for an enjoyable/nostalgic experience
+  4. navigate through the website and game easily and fluidly
+  5. access instructions on how to play the game and game aims
+  6. see a scoreboard of local highscores
+  7. ...
+  8. ...
 
 ***
 
