@@ -47,15 +47,15 @@ As a user of the Space Invader game, I want to:
 
 ### Wireframes
 - Welcome wireframe in desktop view
-![home page desktop wireframe](documentation/wireframes/anlief_desktop_wireframe_home.png)
+![welcome page wireframe](documentation/wireframes/space-invaders-welcome-screen-website-wireframe.png)
 - Instructions wireframe in desktop view
-![home page mobile wireframe](documentation/wireframes/anlief_mobile_wireframe_home.png)
+![instructions wireframe](documentation/wireframes/space-invaders-instructions-screen-website-wireframe.png)
 - Scoreboard wireframe in desktop view
-![internal link structure wireframe](documentation/wireframes/anlief_internal_link_structure_wireframe.png)
+![scoreboard wireframe](documentation/wireframes/space-invaders-scoreboard-screen-website-wireframe.png)
 - Gameplay wireframe in desktop view
-![]()
+![desktop gameplay wireframe](documentation/wireframes/space-invaders-gameplay-website-wireframe.png)
 - Gameplay wireframe in mobile view
-![]()
+![mobile gameplay wireframe](documentation/wireframes/space-invaders-gameplay-mobile-wireframe.png)
 
 ***
 
