@@ -39,8 +39,13 @@ alienInfo = {
     padding: 5
 }
 
-function preload() {
 
+//Load Images
+function preload() {
+    this.load.image("spaceship", "assets/media/spaceship.svg");
+    this.load.image("alien", "assets/media/alien.svg");
+    this.load.image("laser", "assets/media/laser.svg");
+    this.load.image("ufo", "assets/media/ufo.svg");
 };
 
 function create() {
