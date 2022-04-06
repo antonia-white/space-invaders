@@ -88,7 +88,7 @@ As a user of the Space Invader game, I want to:
 - [GitHub Pages](https://antonia-white.github.io/space-invaders/) was used for deployment
 - [Git](https://git-scm.com/) was used for version control
 - [Am I Responsive](http://ami.responsivedesign.is/) was used to generate a mockup image
-- [Bootstrap](https://getbootstrap.com/) was used for website layout and responsive components
+- [Bootstrap](https://getbootstrap.com/) was used for website layout
 - [Dev Tools](https://en.wikipedia.org/wiki/Web_development_tools) was used for testing and responsiveness
 - [ResizePixel](https://www.resizepixel.com/) was used for resizing and cropping images
 
@@ -133,5 +133,6 @@ Alternatively, if using Gitpod, you can click below to create your own workspace
 - The favicon image is from the open source site [Favicon.io](https://favicon.io/emoji-favicons/herb)
 - The responsive design mockup was generated with [Am I Responsive Design](http://ami.responsivedesign.is/#)
 - The colour palette was generated with [Coolors](https://coolors.co/)
+- SVG files were taken from the open source site [SVG Repo](https://www.svgrepo.com/)
 
 ***
