@@ -40,7 +40,7 @@ alienInfo = {
 }
 
 
-//Load Images
+//Preload assets into scene, e.g., images and sounds
 function preload() {
     this.load.image("spaceship", "assets/media/spaceship.svg");
     this.load.image("alien", "assets/media/alien.svg");
@@ -55,12 +55,30 @@ var isLive = false;
 var barriers = [];
 var ufoCount = 0;
 
+//Adds objects to game
 function create() {
-
+    scene = this;
+    cursors = scene.input.keyboard.createCursorKeys();
+    keyA = scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.A);
+    keyD = scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.D);
 };
 
+//Updates game, this function runs constantly
 function update() {
+    if (isLive === true) {
+        if (cursors.left.isDown || keyA.isDown) {
+            spaceship.setVelocityX(-160);
 
+        }
+        else if (cursors.right.isDown || keyD.isDown) {
+            spaceship.setVelocityX(160);
+
+        }
+        else {
+            spaceship.setVelocityX(0);
+
+        }
+    }
 };
 
 // set initial variables
