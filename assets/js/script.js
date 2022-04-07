@@ -48,6 +48,13 @@ function preload() {
     this.load.image("ufo", "assets/media/ufo.svg");
 };
 
+//Set some variables for gameplay
+var score = 0;
+var lives = 3;
+var isLive = false;
+var barriers = [];
+var ufoCount = 0;
+
 function create() {
 
 };
