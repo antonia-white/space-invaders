@@ -1,7 +1,7 @@
 /* jshint esversion: 8, jquery: true */
 
 // Phaser configuration
-var config = {
+let config = {
     type: Phaser.AUTO,
     width: 800,
     height: 600,
@@ -49,18 +49,23 @@ function preload() {
 };
 
 //Set some variables for gameplay
-var score = 0;
-var lives = 3;
-var isLive = false;
-var barriers = [];
-var ufoCount = 0;
+let score = 0;
+let lives = 3;
+let isLive = false;
+let barriers = [];
+let ufoCount = 0;
 
 //Adds objects to game
 function create() {
     scene = this;
+    //Processing DOM Keyboard Events
     cursors = scene.input.keyboard.createCursorKeys();
     keyA = scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.A);
     keyD = scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.D);
+    this.input.keyboard.addCapture('SPACE');
+    
+    isShooting = false;
+    attacker = scene.physics.add.staticGroup();
 };
 
 //Updates game, this function runs constantly
