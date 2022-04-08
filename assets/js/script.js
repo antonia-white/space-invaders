@@ -82,7 +82,19 @@ function create() {
 
     //Shoot event listner
     scene.input.keyboard.on('keydown-SPACE', shoot);
-};
+
+    //Start game function activated on a pointerdown event
+    this.input.on('pointerdown', function(){
+        if (isLive === false) {
+            isLive = true;
+            setInterval(makeUfo, 15000);
+
+        } else {
+            shoot()
+        }
+    });
+    initEnemys()
+}
 
 /**Updates game, this function runs constantly*/
 function update() {
@@ -106,8 +118,8 @@ function update() {
 //https://photonstorm.github.io/phaser3-docs/Phaser.Geom.Intersects.html
 /**Detects collision between two sprites, returns boolean in scene's update method */
 function checkOverlap(spriteA, spriteB) {
-    var boundsA = spriteA.getBounds();
-    var boundsB = spriteB.getBounds();
+    let boundsA = spriteA.getBounds();
+    let boundsB = spriteB.getBounds();
     return Phaser.Geom.Intersects.RectangleToRectangle(boundsA, boundsB);
 }
 
