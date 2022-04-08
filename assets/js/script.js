@@ -9,7 +9,7 @@ let config = {
         default: 'arcade',
         arcade: {
             gravity: { y: 0 },
-            debug: false
+            debug: true
         }
     },
     scene: {
@@ -66,6 +66,15 @@ function create() {
     
     isShooting = false;
     attacker = scene.physics.add.staticGroup();
+
+    //Add rectangles in game area that define where game objects are destroyed
+    spaceshipArea = scene.add.rectangle(0, 0, 800, 10, 0x000).setOrigin(0);
+    alienArea = scene.add.rectangle(0, 590, 800, 10, 0x000).setOrigin(0)
+    ufoArea = scene.add.rectangle(790, 0, 10, 600, 0x000).setOrigin(0);
+    scene.physics.add.existing(spaceshipArea);
+    scene.physics.add.existing(alienArea);
+    scene.physics.add.existing(ufoArea);
+
 };
 
 //Updates game, this function runs constantly
