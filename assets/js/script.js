@@ -8,7 +8,9 @@ let config = {
     physics: {
         default: 'arcade',
         arcade: {
-            gravity: { y: 0 },
+            gravity: {
+                y: 0
+            },
             debug: true
         }
     },
@@ -61,7 +63,7 @@ function create() {
     keyA = scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.A);
     keyD = scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.D);
     this.input.keyboard.addCapture('SPACE');
-    
+
     isShooting = false;
     attacker = scene.physics.add.staticGroup();
 
@@ -77,14 +79,20 @@ function create() {
     spaceship = scene.physics.add.sprite(400, 560, "spaceship").setCollideWorldBounds(true);
 
     //Add score and lives text
-    scoreText = scene.add.text(16, 16, "Score: " + score, {fontSize: '18px', fill: '#FFF'});
-    livesText = scene.add.text(696, 16, "Lives: " + lives, {fontSize: '18px', fill: '#FFF'});
+    scoreText = scene.add.text(16, 16, "Score: " + score, {
+        fontSize: '18px',
+        fill: '#FFF'
+    });
+    livesText = scene.add.text(696, 16, "Lives: " + lives, {
+        fontSize: '18px',
+        fill: '#FFF'
+    });
 
     //Shoot event listner
     scene.input.keyboard.on('keydown-SPACE', shoot);
 
-    //Start game function activated on a pointerdown event
-    this.input.on('pointerdown', function(){
+    /**Start game function activated on a pointerdown event */
+    this.input.on('pointerdown', function () {
         if (isLive === false) {
             isLive = true;
             setInterval(makeUfo, 15000);
@@ -93,7 +101,7 @@ function create() {
             shoot()
         }
     });
-    initEnemys()
+    initAliens()
 }
 
 /**Updates game, this function runs constantly*/
@@ -102,16 +110,24 @@ function update() {
         if (cursors.left.isDown || keyA.isDown) {
             spaceship.setVelocityX(-160);
 
-        }
-        else if (cursors.right.isDown || keyD.isDown) {
+        } else if (cursors.right.isDown || keyD.isDown) {
             spaceship.setVelocityX(160);
 
-        }
-        else {
+        } else {
             spaceship.setVelocityX(0);
 
         }
     }
+};
+
+/**Function to make spaceship shoot laser */
+function shoot() {
+
+};
+
+/**Function to generate UFO into gameplay */
+function makeUfo() {
+
 };
 
 //https://phaser.discourse.group/t/check-collision-overlap-between-sprites-without-physics/6696/3
@@ -126,9 +142,9 @@ function checkOverlap(spriteA, spriteB) {
 // set initial variables
 
 // event listeners for game input
-    // start game
-    // keydown move ship
-    // keydown shoot
+// start game
+// keydown move ship
+// keydown shoot
 
 // function startGame() {
 
