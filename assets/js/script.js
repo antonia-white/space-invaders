@@ -102,6 +102,15 @@ function update() {
     }
 };
 
+//https://phaser.discourse.group/t/check-collision-overlap-between-sprites-without-physics/6696/3
+//https://photonstorm.github.io/phaser3-docs/Phaser.Geom.Intersects.html
+/**Detects collision between two sprites, returns boolean in scene's update method */
+function checkOverlap(spriteA, spriteB) {
+    var boundsA = spriteA.getBounds();
+    var boundsB = spriteB.getBounds();
+    return Phaser.Geom.Intersects.RectangleToRectangle(boundsA, boundsB);
+}
+
 // set initial variables
 
 // event listeners for game input
