@@ -78,6 +78,12 @@ function create() {
     //Add spaceship - sprites can be animated. Set world bounds so unable to drive over edge of screen
     spaceship = scene.physics.add.sprite(400, 560, "spaceship").setCollideWorldBounds(true);
 
+    //Add score and lives text
+    scoreText = scene.add.text(16, 16, "Score: " + score, {fontSize: '18px', fill: '#FFF'});
+    livesText = scene.add.text(696, 16, "Lives: " + lives, {fontSize: '18px', fill: '#FFF'});
+
+    //Shoot event listner
+    scene.input.keyboard.on('keydown-SPACE', shoot);
 };
 
 //Updates game, this function runs constantly
