@@ -39,8 +39,7 @@ alienInfo = {
     padding: 5
 }
 
-
-//Preload assets into scene, e.g., images and sounds
+/** Preload assets into scene, e.g., images and sounds */
 function preload() {
     this.load.image("spaceship", "assets/media/spaceship.svg");
     this.load.image("alien", "assets/media/alien.svg");
@@ -48,14 +47,13 @@ function preload() {
     this.load.image("ufo", "assets/media/ufo.svg");
 };
 
-//Set some variables for gameplay
+//Set variables for gameplay
 let score = 0;
 let lives = 3;
 let isLive = false;
-let barriers = [];
 let ufoCount = 0;
 
-//Adds objects to game
+/** Adds objects to game */
 function create() {
     scene = this;
     //Processing DOM Keyboard Events
@@ -86,7 +84,7 @@ function create() {
     scene.input.keyboard.on('keydown-SPACE', shoot);
 };
 
-//Updates game, this function runs constantly
+/**Updates game, this function runs constantly*/
 function update() {
     if (isLive === true) {
         if (cursors.left.isDown || keyA.isDown) {
