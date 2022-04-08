@@ -67,13 +67,16 @@ function create() {
     isShooting = false;
     attacker = scene.physics.add.staticGroup();
 
-    //Add rectangles in game area that define where game objects are destroyed
+    //Add rectangles in game area that define where game objects are destroyed i.e., game stage edges
     spaceshipArea = scene.add.rectangle(0, 0, 800, 10, 0x000).setOrigin(0);
     alienArea = scene.add.rectangle(0, 590, 800, 10, 0x000).setOrigin(0)
     ufoArea = scene.add.rectangle(790, 0, 10, 600, 0x000).setOrigin(0);
     scene.physics.add.existing(spaceshipArea);
     scene.physics.add.existing(alienArea);
     scene.physics.add.existing(ufoArea);
+
+    //Add spaceship - sprites can be animated. Set world bounds so unable to drive over edge of screen
+    spaceship = scene.physics.add.sprite(400, 560, "spaceship").setCollideWorldBounds(true);
 
 };
 
