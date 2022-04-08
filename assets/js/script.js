@@ -125,8 +125,55 @@ function shoot() {
 
 };
 
+function initAliens() {
+
+};
+
+//ALIEN MOVEMENT
+//Set aliens to move every second
+setInterval(moveAliens, 1000)
+
+let xTimes = 0;
+let yTimes = 0;
+let dir = "right";
+
+/**Periodically move alien attackers */
+function moveAliens() {
+
+}
+
+//PLAYER FIRE
+/**Manage player's spaceship laser shooter */
+function manageLaser() {
+
+}
+
+//ALIEN FIRE
+/**Manage alien attacker's laser shooter */
+let alienLaserVelocity = 200;
+
+function manageAlienLaserVelocity(laser, alien) {
+
+}
+//Set alien fire to every 3seconds
+setInterval(alienFire, 3000);
+
+function enemyFire() {
+
+};
+
+//UFO
+let ufo = [];
 /**Function to generate UFO into gameplay */
 function makeUfo() {
+
+};
+
+setInterval(function () {
+
+}, 2000)
+
+function manageUfo(ufo) {
 
 };
 
@@ -138,46 +185,3 @@ function checkOverlap(spriteA, spriteB) {
     let boundsB = spriteB.getBounds();
     return Phaser.Geom.Intersects.RectangleToRectangle(boundsA, boundsB);
 }
-
-// set initial variables
-
-// event listeners for game input
-// start game
-// keydown move ship
-// keydown shoot
-
-// function startGame() {
-
-// };
-
-// function endGame() {
-
-// };
-
-// function resetGame() {
-
-// };
-
-// function moveShipLeft() {
-
-// };
-
-// function moveShipRight() {
-
-// };
-
-// function shoot() {
-
-// };
-
-// function generateAlienInvasion() {
-
-// };
-
-// function aliensMove() {
-
-// };
-
-// function aliensDescend() {
-
-// };
