@@ -132,7 +132,13 @@ function shoot() {
 };
 
 function initAliens() {
-
+    for (c = 0; c < alienInfo.count.col; c++) {
+        for (r = 0; r < alienInfo.count.row; r++) {
+            let attackerX = (c * (alienInfo.width + alienInfo.padding)) + alienInfo.offset.left;
+            let attackerY = (r * (alienInfo.height + alienInfo.padding)) + alienInfo.offset.top;
+            attacker.create(attackerX, attackerY, "alien").setOrigin(0.5);
+        }
+    }
 };
 
 //ALIEN MOVEMENT
