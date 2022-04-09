@@ -120,11 +120,11 @@ function update() {
     }
 };
 
-/**Function to make shooting functionality shoot laser */
+/**Function to make shooting functionality */
 function shoot() {
-    if (isLive === true) {
+    if (isLive == true) {
         if (isShooting == false) { //Prevents rapid firing
-            manageLaser(scene.physics.add.sprite(spaceship.x, spacehip.y, "laser"))
+            manageLaser(scene.physics.add.sprite(spaceship.x, spaceship.y + -40, "laser"))
             isShooting = true;
         }
     }
