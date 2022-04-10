@@ -11,7 +11,7 @@ let config = {
             gravity: {
                 y: 0
             },
-            debug: true
+            debug: false
         }
     },
     scene: {
@@ -153,6 +153,7 @@ let dir = "right";
 /**Periodically move alien attackers */
 function moveAliens() {
 
+
 }
 
 //PLAYER FIRE
@@ -197,4 +198,12 @@ function checkOverlap(spriteA, spriteB) {
     let boundsA = spriteA.getBounds();
     let boundsB = spriteB.getBounds();
     return Phaser.Geom.Intersects.RectangleToRectangle(boundsA, boundsB);
+}
+
+/**Ends game */
+function endGame(con) {
+    moveAliens.stop();
+    alert(`You ${con}! Score: ${score}`);
+    //reloads current page to restart
+    location.reload();
 }
