@@ -11,7 +11,7 @@ let config = {
             gravity: {
                 y: 0
             },
-            debug: true
+            debug: false
         }
     },
     scene: {
@@ -38,7 +38,7 @@ alienInfo = {
         left: 60
     },
     //padding between aliens
-    padding: 5
+    padding: 10,
 }
 
 /** Preload assets into scene, e.g., images and sounds */
