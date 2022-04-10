@@ -148,31 +148,37 @@ setInterval(moveAliens, 750)
 
 let xTimes = 0;
 let yTimes = 0;
+//Set starting direction to right
 let dir = "right";
 
 /**Periodically move alien attackers */
 function moveAliens() {
-    if (isLive === true){
-        if (xTimes === 20){
-            if(dir === "right") {
+    if (isLive === true) {
+        //Set direction of movement
+        if (xTimes === 20) {
+            if (dir === "right") {
                 dir = "left";
-                xTimes=0
+                xTimes = 0
             } else {
                 dir = "right";
                 xTimes = 0;
             }
         }
         if (dir === "right") {
-            attacker.children.each(function(enemy){
-                enemy.x = enemy.x + 10;
+            //movement in the right direction
+            attacker.children.each(function (enemy) {
+                enemy.x = enemy.x + 10; //increase position on x anxis by 10
                 enemy.body.reset(enemy.x, enemy.y);
             }, this);
+            //increment xTimes
             xTimes++;
         } else {
-            attacker.children.each(function(enemy){
-                enemy.x = enemy.x - 10;
+            //movement in the left direction
+            attacker.children.each(function (enemy) {
+                enemy.x = enemy.x - 10; //decrease position on x axis by 10
                 enemy.body.reset(enemy.x, enemy.y);
             }, this);
+            //increment xTimes
             xTimes++;
         }
     }
