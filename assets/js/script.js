@@ -143,8 +143,8 @@ function initAliens() {
 };
 
 //ALIEN MOVEMENT
-//Set aliens to move every second
-setInterval(moveAliens, 1000)
+//Set aliens to move every 0.75 seconds
+setInterval(moveAliens, 750)
 
 let xTimes = 0;
 let yTimes = 0;
@@ -152,7 +152,30 @@ let dir = "right";
 
 /**Periodically move alien attackers */
 function moveAliens() {
-
+    if (isLive === true){
+        if (xTimes === 20){
+            if(dir === "right") {
+                dir = "left";
+                xTimes=0
+            } else {
+                dir = "right";
+                xTimes = 0;
+            }
+        }
+        if (dir === "right") {
+            attacker.children.each(function(enemy){
+                enemy.x = enemy.x + 10;
+                enemy.body.reset(enemy.x, enemy.y);
+            }, this);
+            xTimes++;
+        } else {
+            attacker.children.each(function(enemy){
+                enemy.x = enemy.x - 10;
+                enemy.body.reset(enemy.x, enemy.y);
+            }, this);
+            xTimes++;
+        }
+    }
 
 }
 
