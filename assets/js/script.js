@@ -11,7 +11,7 @@ let config = {
             gravity: {
                 y: 0
             },
-            debug: false
+            debug: true
         }
     },
     scene: {
@@ -32,7 +32,7 @@ alienInfo = {
         row: 4,
         col: 9
     },
-    //offset aliens from canvas
+    //offset aliens from canvas edge
     offset: {
         top: 100,
         left: 60
@@ -131,6 +131,7 @@ function shoot() {
 
 };
 
+/**Establishes alien  attacker group */
 function initAliens() {
     for (c = 0; c < alienInfo.count.col; c++) {
         for (r = 0; r < alienInfo.count.row; r++) {
