@@ -134,5 +134,6 @@ Alternatively, if using Gitpod, you can click below to create your own workspace
 - The responsive design mockup was generated with [Am I Responsive Design](http://ami.responsivedesign.is/#)
 - The colour palette was generated with [Coolors](https://coolors.co/)
 - SVG files were taken from the open source site [SVG Repo](https://www.svgrepo.com/)
+- SVG files were resized with [iloveimg](https://www.iloveimg.com/)
 
 ***
