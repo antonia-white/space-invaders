@@ -188,18 +188,70 @@ function moveAliens() {
 //PLAYER FIRE
 /**Manage player's spaceship laser shooter */
 function manageLaser() {
+    laser.setVelocityY(-380);
+    let i = setInterval(function () {
+        attacker.children.each(function (enemy) {
+            if (checkOverlap(laser, enemy)) {
+                //destroy laser on impact with alien attacker
+                laser.destroy();
+                clearInterval(i);
+                isShooting = false;
+                //destroy alien on impact
+                enemy.destory();
+                //increment score
+                score++;
+                //display new score
+                scoreText.setText("Score: " + score);
+
+                //define game win as 
+                if ((score - ufoCount) === enemyInfo.count.col * enemyInfo.count.row) {
+                    endGame("Win")
+                }
+
+            }
+
+        }, this)
+
+        for (let step = 0; step < ufo.length; step++) {
+            let ufo = ufo[step];
+            if (checkOverlap(laser, ufo)) {
+                laser.destroy();
+                clearInterval(i)
+                isShooting = false
+                scoreText.setText("Score: " + score);
+
+
+                if ((score - ufoCount) === (alienInfo.count.col * alienInfo.count.row)) {
+                    end("Win")
+                }
+
+                ufo.destroy()
+                ufo.isDestroyed = true;
+                score++;
+                ufoCount++;
+            }
+        }
+    }, 
+    //set time to 10ms
+    10)
+    scene.physics.add.overlap(laser, spaceshipArea, function () {
+        laser.destroy();
+        clearInterval(i);
+        isShooting = false
+    })
 
 }
 
 //ALIEN FIRE
-/**Manage alien attacker's laser shooter */
 let alienLaserVelocity = 200;
 
+/**Alien fire to find the angle towards player and shoot */
 function manageAlienLaserVelocity(laser, alien) {
 
 }
 //Set alien fire to every 3seconds
 setInterval(alienFire, 3000);
+
 
 function enemyFire() {
 
@@ -235,4 +287,4 @@ function endGame(con) {
     alert(`You ${con}! Score: ${score}`);
     //reloads current page to restart
     location.reload();
-}
+};
