@@ -154,7 +154,7 @@ let dir = "right";
 /**Periodically move alien attackers */
 function moveAliens() {
     if (isLive === true) {
-        //Set direction of movement
+        //Set direction of movement -- this could be switch
         if (xTimes === 20) {
             if (dir === "right") {
                 dir = "left";
@@ -282,14 +282,14 @@ function manageUfo(ufo) {
 //https://photonstorm.github.io/phaser3-docs/Phaser.Geom.Intersects.html
 /**Detects collision between two sprites, returns boolean in scene's update method */
 function checkOverlap(spriteA, spriteB) {
-    let boundsA = spriteA.getBounds();
-    let boundsB = spriteB.getBounds();
-    return Phaser.Geom.Intersects.RectangleToRectangle(boundsA, boundsB);
+    let edgeA = spriteA.getBounds();
+    let edgeB = spriteB.getBounds();
+    return Phaser.Geom.Intersects.RectangleToRectangle(edgeA, edgeB);
 }
 
 /**Ends game */
 function endGame(con) {
-    alert(`You ${con}! Score: ${score}`);
+    alert(`You ${con}! Score: ${score}`); //change to modal
     //reloads current page to restart
     location.reload();
 };
