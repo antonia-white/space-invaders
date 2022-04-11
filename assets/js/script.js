@@ -204,7 +204,7 @@ function manageLaser(laser) {
                 scoreText.setText("Score: " + score);
 
                 //define game win as 
-                if ((score - ufoCount) === enemyInfo.count.col * enemyInfo.count.row) {
+                if ((score - ufoCount) === alienInfo.count.col * alienInfo.count.row) {
                     endGame("Win")
                 }
 
@@ -283,7 +283,6 @@ function checkOverlap(spriteA, spriteB) {
 
 /**Ends game */
 function endGame(con) {
-    moveAliens.stop();
     alert(`You ${con}! Score: ${score}`);
     //reloads current page to restart
     location.reload();
