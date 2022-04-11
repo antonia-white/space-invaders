@@ -197,7 +197,7 @@ function manageLaser(laser) {
                 clearInterval(i);
                 isShooting = false;
                 //destroy alien on impact
-                enemy.destory();
+                enemy.destroy();
                 //increment score
                 score++;
                 //display new score
