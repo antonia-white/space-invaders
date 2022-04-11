@@ -187,7 +187,7 @@ function moveAliens() {
 
 //PLAYER FIRE
 /**Manage player's spaceship laser shooter */
-function manageLaser() {
+function manageLaser(laser) {
     laser.setVelocityY(-380);
     let i = setInterval(function () {
         attacker.children.each(function (enemy) {
