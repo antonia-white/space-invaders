@@ -212,15 +212,19 @@ function manageLaser(laser) {
 
         }, this)
 
+            //iterate through UFOs
         for (let step = 0; step < ufo.length; step++) {
             let ufo = ufo[step];
+            //check collision between ufo and bullet
             if (checkOverlap(laser, ufo)) {
                 laser.destroy();
                 clearInterval(i)
+                //allow next shot
                 isShooting = false
+                //upate score display
                 scoreText.setText("Score: " + score);
 
-
+                //define game win
                 if ((score - ufoCount) === (alienInfo.count.col * alienInfo.count.row)) {
                     end("Win")
                 }
@@ -264,10 +268,12 @@ function makeUfo() {
 
 };
 
+/**set ufo interval to 2secs */
 setInterval(function () {
 
 }, 2000)
 
+/** */
 function manageUfo(ufo) {
 
 };
