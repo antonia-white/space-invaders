@@ -286,7 +286,6 @@ function manageAlienLaserVelocity(laser, enemy) {
 
 }
 
-}
 //Set alien fire to every 3seconds
 setInterval(alienFire, 3000);
 
