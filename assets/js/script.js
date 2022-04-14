@@ -250,7 +250,7 @@ function manageLaser(laser) {
 let alienLaserVelocity = 200;
 
 /**Finds the angle and velocity of enemy fire and stores it in the laser */
-function manageAlienLaserVelocity(laser, alien) {
+function manageAlienLaserVelocity(laser, enemy) {
     //Find angle of fire between spaceship and alien
     let angleOfFire = Phaser.Math.Angle.BetweenPoints(enemy, spaceship);
     //Calculate the velocity when given rotation and speed. Laser body stores the velocity
