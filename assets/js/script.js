@@ -21,7 +21,7 @@ let config = {
     }
 };
 
-var game = new Phaser.Game(config);
+let game = new Phaser.Game(config);
 
 alienInfo = {
     //height and width of each alien
@@ -64,7 +64,7 @@ function create() {
     keyD = scene.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.D);
     this.input.keyboard.addCapture('SPACE');
 
-    isShooting = false;
+    isFiring = false;
     attacker = scene.physics.add.staticGroup();
 
     //Add rectangles in game area that define where game objects are destroyed i.e., game stage edges
@@ -123,9 +123,9 @@ function update() {
 /**Function to make shooting functionality */
 function shoot() {
     if (isLive == true) {
-        if (isShooting == false) { //Prevents rapid firing
+        if (isFiring == false) { //Prevents rapid firing
             manageLaser(scene.physics.add.sprite(spaceship.x, spaceship.y + -40, "laser"))
-            isShooting = true;
+            isFiring = true;
         }
     }
 
@@ -191,11 +191,11 @@ function manageLaser(laser) {
     laser.setVelocityY(-380);
     let i = setInterval(function () {
         attacker.children.each(function (enemy) {
-            if (checkOverlap(laser, enemy)) {
+            if (checkCollision(laser, enemy)) {
                 //destroy laser on impact with alien attacker
                 laser.destroy();
                 clearInterval(i);
-                isShooting = false;
+                isFiring = false;
                 //destroy alien on impact
                 enemy.destroy();
                 //increment score
@@ -216,11 +216,11 @@ function manageLaser(laser) {
         for (let step = 0; step < ufo.length; step++) {
             let ufo = ufo[step];
             //check collision between ufo and bullet
-            if (checkOverlap(laser, ufo)) {
+            if (checkCollision(laser, ufo)) {
                 laser.destroy();
                 clearInterval(i)
                 //allow next shot
-                isShooting = false
+                isFiring = false
                 //upate score display
                 scoreText.setText("Score: " + score);
 
@@ -241,7 +241,7 @@ function manageLaser(laser) {
     scene.physics.add.overlap(laser, spaceshipArea, function () {
         laser.destroy();
         clearInterval(i);
-        isShooting = false
+        isFiring = false
     })
 
 }
@@ -281,7 +281,7 @@ function manageUfo(ufo) {
 //https://phaser.discourse.group/t/check-collision-overlap-between-sprites-without-physics/6696/3
 //https://photonstorm.github.io/phaser3-docs/Phaser.Geom.Intersects.html
 /**Detects collision between two sprites, returns boolean in scene's update method */
-function checkOverlap(spriteA, spriteB) {
+function checkCollision(spriteA, spriteB) {
     let edgeA = spriteA.getBounds();
     let edgeB = spriteB.getBounds();
     return Phaser.Geom.Intersects.RectangleToRectangle(edgeA, edgeB);
