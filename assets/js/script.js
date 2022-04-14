@@ -251,6 +251,13 @@ let alienLaserVelocity = 200;
 
 /**Alien fire to find the angle towards player and shoot */
 function manageAlienLaserVelocity(laser, alien) {
+    //Find angle of fire between spaceship and alien
+    let angleOfFire = Phaser.Math.Angle.BetweenPoints(enemy, spaceship);
+    //Calculate the velocity when given rotation and speed. Laser body stores the velocity
+    //https://newdocs.phaser.io/docs/3.55.2/focus/Phaser.Physics.Arcade.ArcadePhysics-velocityFromRotation
+    scene.physics.velocityFromRotation(angleOfFire, alienLaserVelocity, laser.body.velocity);
+    //Increases velocity after every shot
+    alienLaserVelocity = alienLaserVelocity + 2;
 
 }
 //Set alien fire to every 3seconds
