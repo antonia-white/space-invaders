@@ -39,7 +39,7 @@ alienInfo = {
     },
     //padding between aliens
     padding: 10,
-}
+};
 
 /** Preload assets into scene, e.g., images and sounds */
 function preload() {
@@ -47,7 +47,7 @@ function preload() {
     this.load.image("alien", "assets/media/alien.svg");
     this.load.image("laser", "assets/media/laser.svg");
     this.load.image("ufo", "assets/media/ufo.svg");
-};
+}
 
 //Set variables for gameplay
 let score = 0;
@@ -69,7 +69,7 @@ function create() {
 
     //Add rectangles in game area that define where game objects are destroyed i.e., game stage edges
     spaceshipArea = scene.add.rectangle(0, 0, 800, 10, 0x000).setOrigin(0);
-    alienArea = scene.add.rectangle(0, 590, 800, 10, 0x000).setOrigin(0)
+    alienArea = scene.add.rectangle(0, 590, 800, 10, 0x000).setOrigin(0);
     ufoArea = scene.add.rectangle(790, 0, 10, 600, 0x000).setOrigin(0);
     scene.physics.add.existing(spaceshipArea);
     scene.physics.add.existing(alienArea);
@@ -98,10 +98,10 @@ function create() {
             setInterval(makeUfo, 15000);
 
         } else {
-            shoot()
+            shoot();
         }
     });
-    initAliens()
+    initAliens();
 }
 
 /**Updates game, this function runs constantly*/
@@ -118,18 +118,18 @@ function update() {
 
         }
     }
-};
+}
 
 /**Function to make shooting functionality */
 function shoot() {
     if (isLive == true) {
         if (isFiring == false) { //Prevents rapid firing
-            manageLaser(scene.physics.add.sprite(spaceship.x, spaceship.y + -40, "laser"))
+            manageLaser(scene.physics.add.sprite(spaceship.x, spaceship.y + -40, "laser"));
             isFiring = true;
         }
     }
 
-};
+}
 
 /**Establishes alien  attacker group */
 function initAliens() {
@@ -140,11 +140,11 @@ function initAliens() {
             attacker.create(attackerX, attackerY, "alien").setOrigin(0.5);
         }
     }
-};
+}
 
 //ALIEN MOVEMENT
 //Set aliens to move every 0.75 seconds
-setInterval(moveAliens, 750)
+setInterval(moveAliens, 750);
 
 let xTimes = 0;
 let yTimes = 0;
@@ -158,7 +158,7 @@ function moveAliens() {
         if (xTimes === 20) {
             if (dir === "right") {
                 dir = "left";
-                xTimes = 0
+                xTimes = 0;
             } else {
                 dir = "right";
                 xTimes = 0;
@@ -205,12 +205,12 @@ function manageLaser(laser) {
 
                 //define game win as 
                 if ((score - ufoCount) === alienInfo.count.col * alienInfo.count.row) {
-                    endGame("Win")
+                    endGame("Win");
                 }
 
             }
 
-        }, this)
+        }, this);
 
             //iterate through UFOs
         for (let step = 0; step < ufo.length; step++) {
@@ -218,18 +218,18 @@ function manageLaser(laser) {
             //check collision between ufo and bullet
             if (checkCollision(laser, ufo)) {
                 laser.destroy();
-                clearInterval(i)
+                clearInterval(i);
                 //allow next shot
-                isFiring = false
+                isFiring = false;
                 //upate score display
                 scoreText.setText("Score: " + score);
 
                 //define game win
                 if ((score - ufoCount) === (alienInfo.count.col * alienInfo.count.row)) {
-                    end("Win")
+                    end("Win");
                 }
 
-                ufo.destroy()
+                ufo.destroy();
                 ufo.isDestroyed = true;
                 score++;
                 ufoCount++;
@@ -237,19 +237,19 @@ function manageLaser(laser) {
         }
     }, 
     //set time to 10ms
-    10)
+    10);
     scene.physics.add.overlap(laser, spaceshipArea, function () {
         laser.destroy();
         clearInterval(i);
-        isFiring = false
-    })
+        isFiring = false;
+    });
 
 }
 
 //ALIEN FIRE
 let alienLaserVelocity = 200;
 
-/**Alien fire to find the angle towards player and shoot */
+/**Finds the angle and velocity of enemy fire and stores it in the laser */
 function manageAlienLaserVelocity(laser, alien) {
     //Find angle of fire between spaceship and alien
     let angleOfFire = Phaser.Math.Angle.BetweenPoints(enemy, spaceship);
@@ -266,24 +266,24 @@ setInterval(alienFire, 3000);
 
 function enemyFire() {
 
-};
+}
 
 //UFO
 let ufo = [];
 /**Function to generate UFO into gameplay */
 function makeUfo() {
 
-};
+}
 
 /**set ufo interval to 2secs */
 setInterval(function () {
 
-}, 2000)
+}, 2000);
 
 /** */
 function manageUfo(ufo) {
 
-};
+}
 
 //https://phaser.discourse.group/t/check-collision-overlap-between-sprites-without-physics/6696/3
 //https://photonstorm.github.io/phaser3-docs/Phaser.Geom.Intersects.html
@@ -299,4 +299,4 @@ function endGame(con) {
     alert(`You ${con}! Score: ${score}`); //change to modal
     //reloads current page to restart
     location.reload();
-};
+}
