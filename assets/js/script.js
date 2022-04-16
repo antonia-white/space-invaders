@@ -302,7 +302,7 @@ setInterval(alienFire, 3000);
 function alienFire() {
     if (isLive === true){
         let enemy = attacker.children.entries[Phaser.Math.Between(0, attacker.children.entries.length - 1)];
-        manageAlienLaser(scene.physics.add.sprite(enemy.x, enemy.y, "laser", enemy))
+        manageAlienLaser(scene.physics.add.sprite(enemy.x, enemy.y, "laser"), enemy)
     }
 
 }
