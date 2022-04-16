@@ -250,7 +250,7 @@ function manageLaser(laser) {
 let alienLaserVelocity = 200;
 
 /**Finds the angle and velocity of enemy fire and stores it in the laser */
-function manageAlienLaserVelocity(laser, enemy) {
+function manageAlienLaser(laser, enemy) {
     //Find angle of fire between spaceship and alien
     let angleOfFire = Phaser.Math.Angle.BetweenPoints(enemy, spaceship);
     //Calculate the velocity when given rotation and speed. Laser body stores the velocity
@@ -286,11 +286,24 @@ function manageAlienLaserVelocity(laser, enemy) {
 
 }
 
+//https://phaser.discourse.group/t/check-collision-overlap-between-sprites-without-physics/6696/3
+//https://photonstorm.github.io/phaser3-docs/Phaser.Geom.Intersects.html
+/**Detects collision between two sprites, returns boolean in scene's update method */
+function checkCollision(spriteA, spriteB) {
+    let edgeA = spriteA.getBounds();
+    let edgeB = spriteB.getBounds();
+    return Phaser.Geom.Intersects.RectangleToRectangle(edgeA, edgeB);
+}
+
 //Set alien fire to every 3seconds
 setInterval(alienFire, 3000);
 
 
-function enemyFire() {
+function alienFire() {
+    if (isLive === true){
+        let enemy = attacker.children.entries[Phaser.Math.Between(0, attacker.children.entries.length - 1)];
+        manageAlienLaser(scene.physics.add.sprite(enemy.x, enemy.y, "laser", enemy))
+    }
 
 }
 
@@ -311,14 +324,6 @@ function manageUfo(ufo) {
 
 }
 
-//https://phaser.discourse.group/t/check-collision-overlap-between-sprites-without-physics/6696/3
-//https://photonstorm.github.io/phaser3-docs/Phaser.Geom.Intersects.html
-/**Detects collision between two sprites, returns boolean in scene's update method */
-function checkCollision(spriteA, spriteB) {
-    let edgeA = spriteA.getBounds();
-    let edgeB = spriteB.getBounds();
-    return Phaser.Geom.Intersects.RectangleToRectangle(edgeA, edgeB);
-}
 
 /**Ends game */
 function endGame(con) {
