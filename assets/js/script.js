@@ -11,7 +11,7 @@ let config = {
             gravity: {
                 y: 0
             },
-            debug: true
+            debug: false
         }
     },
     scene: {
@@ -184,103 +184,6 @@ function moveAliens() {
     }
 
 }
-
-
-//UFOS
-let ufos = [];
-/**Function to generate UFO into gameplay */
-function makeUfo() {
-    if (isLive === true) {
-        manageUfo(scene.physics.add.sprite(0, 60, "ufo"))
-    }
-}
-
-/**set ufo interval to 2secs */
-setInterval(function () {
-    if (isLive === true) {
-        for (let i = 0; i < ufos.length; i++) {
-            let ufo = ufos[i];
-            if (ufo.isDestroyed == false) {
-                manageAlienLaser(scene.add.sprite(ufo.x, ufo.y, "laser"), ufo)
-            } else {
-                ufos.splice(i, 1);
-            }
-        }
-    }
-}, 2000);
-
-/** */
-function manageUfo(ufo) {
-    ufos.push(ufo);
-    ufo.isDestroyed = false;
-    ufo.setVelocityX(100);
-    scene.physics.add.overlap(ufo, ufoArea, function(){
-        ufo.destroy();
-        ufo.isDestroyed = true;
-    })
-}
-
-//PLAYER FIRE
-/**Manage player's spaceship laser shooter */
-function manageLaser(laser) {
-    laser.setVelocityY(-380);
-    let i = setInterval(function () {
-            attacker.children.each(function (enemy) {
-                if (checkCollision(laser, enemy)) {
-                    //destroy laser on impact with alien attacker
-                    laser.destroy();
-                    clearInterval(i);
-                    isFiring = false;
-                    //destroy alien on impact
-                    enemy.destroy();
-                    //increment score
-                    score++;
-                    //display new score
-                    scoreText.setText("Score: " + score);
-
-                    //define game win as 
-                    if ((score - ufoCount) === alienInfo.count.col * alienInfo.count.row) {
-                        endGame("Win");
-                    }
-
-                }
-
-            }, this);
-
-            //iterate through UFOs
-            for (let step = 0; step < ufos.length; step++) {
-                let ufo = ufos[step];
-                //check collision between ufo and bullet
-                if (checkCollision(laser, ufo)) {
-                    laser.destroy();
-                    clearInterval(i);
-                    //allow next shot
-                    isFiring = false;
-
-                    //define game win
-                    if ((score - ufoCount) === (alienInfo.count.col * alienInfo.count.row)) {
-                        end("Win");
-                    }
-
-                    ufo.destroy();
-                    ufo.isDestroyed = true;
-                    score++;
-                    ufoCount++;
-                     //upate score display
-                     scoreText.setText("Score: " + score);
-                }
-            }
-        },
-        //set time to 10ms
-        10);
-    scene.physics.add.overlap(laser, spaceshipArea, function () {
-        laser.destroy();
-        clearInterval(i);
-        isFiring = false;
-    });
-
-}
-
 //ALIEN FIRE
 let alienLaserVelocity = 200;
 
@@ -333,6 +236,101 @@ function alienFire() {
 
 }
 
+//UFOS
+let ufos = [];
+/**Function to generate UFO into gameplay */
+function makeUfo() {
+    if (isLive === true) {
+        manageUfo(scene.physics.add.sprite(0, 60, "ufo"))
+    }
+}
+
+/**set ufo interval to 2secs */
+setInterval(function () {
+    if (isLive === true) {
+        for (let i = 0; i < ufos.length; i++) {
+            let ufo = ufos[i];
+            if (ufo.isDestroyed == false) {
+                manageAlienLaser(scene.physics.add.sprite(ufo.x, ufo.y, "laser"), ufo)
+            } else {
+                ufos.splice(i, 1);
+            }
+        }
+    }
+}, 2000);
+
+/** */
+function manageUfo(ufo) {
+    ufos.push(ufo);
+    ufo.isDestroyed = false;
+    ufo.setVelocityX(100);
+    scene.physics.add.overlap(ufo, ufoArea, function () {
+        ufo.destroy();
+        ufo.isDestroyed = true;
+    })
+}
+
+//PLAYER FIRE
+/**Manage player's spaceship laser shooter */
+function manageLaser(laser) {
+    laser.setVelocityY(-380);
+    let i = setInterval(function () {
+            attacker.children.each(function (enemy) {
+                if (checkCollision(laser, enemy)) {
+                    //destroy laser on impact with alien attacker
+                    laser.destroy();
+                    clearInterval(i);
+                    isFiring = false;
+                    //destroy alien on impact
+                    enemy.destroy();
+                    //increment score
+                    score++;
+                    //display new score
+                    scoreText.setText("Score: " + score);
+
+                    //define game win as 
+                    if ((score - ufoCount) === alienInfo.count.col * alienInfo.count.row) {
+                        endGame("Win");
+                    }
+
+                }
+
+            }, this);
+
+            //iterate through UFOs
+            for (let step = 0; step < ufos.length; step++) {
+                let ufo = ufos[step];
+                //check collision between ufo and bullet
+                if (checkCollision(laser, ufo)) {
+                    laser.destroy();
+                    clearInterval(i);
+                    //allow next shot
+                    isFiring = false;
+
+                    //define game win
+                    if ((score - ufoCount) === (alienInfo.count.col * alienInfo.count.row)) {
+                        end("Win");
+                    }
+
+                    ufo.destroy();
+                    ufo.isDestroyed = true;
+                    score++;
+                    ufoCount++;
+                    //upate score display
+                    scoreText.setText("Score: " + score);
+                }
+            }
+        },
+        //set time to 10ms
+        10);
+    scene.physics.add.overlap(laser, spaceshipArea, function () {
+        laser.destroy();
+        clearInterval(i);
+        isFiring = false;
+    });
+
+}
+
 //COLLISIONS
 //https://phaser.discourse.group/t/check-collision-overlap-between-sprites-without-physics/6696/3
 //https://photonstorm.github.io/phaser3-docs/Phaser.Geom.Intersects.html
@@ -342,8 +340,6 @@ function checkCollision(spriteA, spriteB) {
     let edgeB = spriteB.getBounds();
     return Phaser.Geom.Intersects.RectangleToRectangle(edgeA, edgeB);
 }
-
-
 
 /**Ends game */
 function endGame(con) {
