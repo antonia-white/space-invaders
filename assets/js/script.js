@@ -11,7 +11,7 @@ let config = {
             gravity: {
                 y: 0
             },
-            debug: false
+            debug: true
         }
     },
     scene: {
@@ -185,6 +185,41 @@ function moveAliens() {
 
 }
 
+
+//UFOS
+let ufos = [];
+/**Function to generate UFO into gameplay */
+function makeUfo() {
+    if (isLive === true) {
+        manageUfo(scene.physics.add.sprite(0, 60, "ufo"))
+    }
+}
+
+/**set ufo interval to 2secs */
+setInterval(function () {
+    if (isLive === true) {
+        for (let i = 0; i < ufos.length; i++) {
+            let ufo = ufos[i];
+            if (ufo.isDestroyed == false) {
+                manageAlienLaser(scene.add.sprite(ufo.x, ufo.y, "laser"), ufo)
+            } else {
+                ufos.splice(i, 1);
+            }
+        }
+    }
+}, 2000);
+
+/** */
+function manageUfo(ufo) {
+    ufos.push(ufo);
+    ufo.isDestroyed = false;
+    ufo.setVelocityX(100);
+    scene.physics.add.overlap(ufo, ufoArea, function(){
+        ufo.destroy();
+        ufo.isDestroyed = true;
+    })
+}
+
 //PLAYER FIRE
 /**Manage player's spaceship laser shooter */
 function manageLaser(laser) {
@@ -213,7 +248,7 @@ function manageLaser(laser) {
             }, this);
 
             //iterate through UFOs
-            for (let step = 0; step < ufo.length; step++) {
+            for (let step = 0; step < ufos.length; step++) {
                 let ufo = ufo[step];
                 //check collision between ufo and bullet
                 if (checkCollision(laser, ufo)) {
@@ -286,6 +321,19 @@ function manageAlienLaser(laser, enemy) {
 
 }
 
+//Set alien fire to every 3seconds
+setInterval(alienFire, 3000);
+
+
+function alienFire() {
+    if (isLive === true) {
+        let enemy = attacker.children.entries[Phaser.Math.Between(0, attacker.children.entries.length - 1)];
+        manageAlienLaser(scene.physics.add.sprite(enemy.x, enemy.y, "laser"), enemy)
+    }
+
+}
+
+//COLLISIONS
 //https://phaser.discourse.group/t/check-collision-overlap-between-sprites-without-physics/6696/3
 //https://photonstorm.github.io/phaser3-docs/Phaser.Geom.Intersects.html
 /**Detects collision between two sprites, returns boolean in scene's update method */
@@ -295,34 +343,6 @@ function checkCollision(spriteA, spriteB) {
     return Phaser.Geom.Intersects.RectangleToRectangle(edgeA, edgeB);
 }
 
-//Set alien fire to every 3seconds
-setInterval(alienFire, 3000);
-
-
-function alienFire() {
-    if (isLive === true){
-        let enemy = attacker.children.entries[Phaser.Math.Between(0, attacker.children.entries.length - 1)];
-        manageAlienLaser(scene.physics.add.sprite(enemy.x, enemy.y, "laser"), enemy)
-    }
-
-}
-
-//UFO
-let ufo = [];
-/**Function to generate UFO into gameplay */
-function makeUfo() {
-
-}
-
-/**set ufo interval to 2secs */
-setInterval(function () {
-
-}, 2000);
-
-/** */
-function manageUfo(ufo) {
-
-}
 
 
 /**Ends game */
