@@ -143,6 +143,7 @@ function initAliens() {
 }
 
 //ALIEN MOVEMENT
+
 //Set aliens to move every 0.75 seconds
 setInterval(moveAliens, 750);
 
@@ -154,6 +155,7 @@ let dir = "right";
 /**Periodically move alien attackers */
 function moveAliens() {
     if (isLive === true) {
+
         //Set direction of movement -- this could be switch
         if (xTimes === 20) {
             if (dir === "right") {
@@ -165,6 +167,7 @@ function moveAliens() {
             }
         }
         if (dir === "right") {
+
             //movement in the right direction
             attacker.children.each(function (enemy) {
                 enemy.x = enemy.x + 10; //increase position on x anxis by 10
@@ -173,6 +176,7 @@ function moveAliens() {
             //increment xTimes
             xTimes++;
         } else {
+
             //movement in the left direction
             attacker.children.each(function (enemy) {
                 enemy.x = enemy.x - 10; //decrease position on x axis by 10
@@ -184,16 +188,21 @@ function moveAliens() {
     }
 
 }
+
 //ALIEN FIRE
+
 let alienLaserVelocity = 200;
 
 /**Finds the angle and velocity of enemy fire and stores it in the laser */
 function manageAlienLaser(laser, enemy) {
+
     //Find angle of fire between spaceship and alien
     let angleOfFire = Phaser.Math.Angle.BetweenPoints(enemy, spaceship);
+
     //Calculate the velocity when given rotation and speed. Laser body stores the velocity
     //https://newdocs.phaser.io/docs/3.55.2/focus/Phaser.Physics.Arcade.ArcadePhysics-velocityFromRotation
     scene.physics.velocityFromRotation(angleOfFire, alienLaserVelocity, laser.body.velocity);
+
     //Increases velocity after every shot
     alienLaserVelocity = alienLaserVelocity + 2;
 
@@ -237,7 +246,9 @@ function alienFire() {
 }
 
 //UFOS
+
 let ufos = [];
+
 /**Function to generate UFO into gameplay */
 function makeUfo() {
     if (isLive === true) {
@@ -259,7 +270,7 @@ setInterval(function () {
     }
 }, 2000);
 
-/** */
+/**Manages action of ufo in gameplay */
 function manageUfo(ufo) {
     ufos.push(ufo);
     ufo.isDestroyed = false;
@@ -271,6 +282,7 @@ function manageUfo(ufo) {
 }
 
 //PLAYER FIRE
+
 /**Manage player's spaceship laser shooter */
 function manageLaser(laser) {
     laser.setVelocityY(-380);
@@ -332,14 +344,18 @@ function manageLaser(laser) {
 }
 
 //COLLISIONS
+
 //https://phaser.discourse.group/t/check-collision-overlap-between-sprites-without-physics/6696/3
 //https://photonstorm.github.io/phaser3-docs/Phaser.Geom.Intersects.html
+
 /**Detects collision between two sprites, returns boolean in scene's update method */
 function checkCollision(spriteA, spriteB) {
     let edgeA = spriteA.getBounds();
     let edgeB = spriteB.getBounds();
     return Phaser.Geom.Intersects.RectangleToRectangle(edgeA, edgeB);
 }
+
+//End game
 
 /**Ends game */
 function endGame(con) {
