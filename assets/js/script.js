@@ -249,15 +249,13 @@ function manageLaser(laser) {
 
             //iterate through UFOs
             for (let step = 0; step < ufos.length; step++) {
-                let ufo = ufo[step];
+                let ufo = ufos[step];
                 //check collision between ufo and bullet
                 if (checkCollision(laser, ufo)) {
                     laser.destroy();
                     clearInterval(i);
                     //allow next shot
                     isFiring = false;
-                    //upate score display
-                    scoreText.setText("Score: " + score);
 
                     //define game win
                     if ((score - ufoCount) === (alienInfo.count.col * alienInfo.count.row)) {
@@ -268,6 +266,8 @@ function manageLaser(laser) {
                     ufo.isDestroyed = true;
                     score++;
                     ufoCount++;
+                     //upate score display
+                     scoreText.setText("Score: " + score);
                 }
             }
         },
