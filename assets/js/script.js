@@ -374,13 +374,13 @@ let btn = document.getElementById("myBtn");
 let startBtn = document.getElementById("startBtn");
 
 // When the user clicks on the button, open the homeModal
-btn.onclick = function() {
-  homeModal.style.display = "block";
+btn.onclick = function () {
+    homeModal.style.display = "block";
 }
 
 // When the user clicks on start button, close the homeModal for gameplay
-startBtn.onclick = function() {
-  homeModal.style.display = "none";
+startBtn.onclick = function () {
+    homeModal.style.display = "none";
 }
 
 // Get instructions modal
@@ -390,13 +390,10 @@ let instructionsModal = document.getElementById("instructionsModal");
 let instructionsBtn = document.getElementById("instructionsBtn");
 
 // When the user clicks on the instructions button, open the instructions modal
-instructionsBtn.onclick = function() {
+instructionsBtn.onclick = function () {
     homeModal.style.display = "none";
     instructionsModal.style.display = "block";
 }
-
-//Get back button
-let backBtn = document.getElementById("backBtn");
 
 //Get scoreboardModal
 let scoreboardModal = document.getElementById("scoreboardModal");
@@ -405,14 +402,25 @@ let scoreboardModal = document.getElementById("scoreboardModal");
 let scoreboardBtn = document.getElementById("scoreboardBtn");
 
 //When scoreboard button clicked show scoreboard
-scoreboardBtn.onclick = function() {
+scoreboardBtn.onclick = function () {
     homeModal.style.display = "none";
     scoreboardModal.style.display = "block";
 }
 
-//When back button clicked hide instructions and scoreboard modal and show homeModal
-backBtn.onclick = function() {
+//Get instructions back button
+let instructionBackBtn = document.getElementById("instructionsBackBtn");
+
+//When back button clicked hide instructions modal and show homeModal
+instructionsBackBtn.onclick = function () {
     instructionsModal.style.display = "none";
+    homeModal.style.display = "block";
+}
+
+//Get scoreboard back button
+let scoreboardBackBtn = document.getElementById("scoreboardBackBtn");
+
+//When back button clicked hide scoreboard modal and show homeModal
+scoreboardBackBtn.onclick = function () {
     scoreboardModal.style.display = "none";
     homeModal.style.display = "block";
 }
