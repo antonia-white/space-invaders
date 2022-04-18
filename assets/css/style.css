@@ -21,3 +21,63 @@ canvas {
 h2 {
     font-family: 'Bungee', cursive;
 }
+
+ /* The Modal (background) */
+ .modal {
+    display: none; /* Hidden by default */
+    position: absolute; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+  }
+  
+  /* Modal Content/Box */
+  .modal-content {
+    background-color: #00000080;
+    margin: 215px auto; /* 15% from the top and centered */
+    padding-left: 10px;
+    border: 1px solid #888;
+    width: 790px;
+    height: 600px;
+  }
+
+  /*Home buttons*/
+  .homeBtn {
+    background-color: black;
+    border: 3px solid white;
+    border-radius: 15px;
+    color: white;
+    text-align: center;
+    font-size: xxx-large;
+    font-family: 'Bungee', cursive;
+    text-decoration: none;
+    display: block;
+    height: 125px;
+    width: 410px;
+    margin-left: 190px;
+    margin-top: 50px;
+
+  }
+
+  .homeBtn:hover,
+  .homeBtn:focus {
+      cursor: pointer;
+      background-color: #1f1f1f;
+  }
+  
+  /* The Close Button */
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  } 
