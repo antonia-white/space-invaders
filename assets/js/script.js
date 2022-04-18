@@ -365,10 +365,10 @@ function endGame(con) {
 }
 
 // Get the homeModal
-var homeModal = document.getElementById("homeModal");
+let homeModal = document.getElementById("homeModal");
 
 // Get the button that opens the homeModal
-var btn = document.getElementById("myBtn");
+let btn = document.getElementById("myBtn");
 
 // Get the start button which will close the modal to reveal the game
 let startBtn = document.getElementById("startBtn");
@@ -378,7 +378,7 @@ btn.onclick = function() {
   homeModal.style.display = "block";
 }
 
-// When the user clicks on <span> (x), close the homeModal
+// When the user clicks on start button, close the homeModal for gameplay
 startBtn.onclick = function() {
   homeModal.style.display = "none";
 }
