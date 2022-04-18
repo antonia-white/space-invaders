@@ -1,4 +1,4 @@
-/* jshint esversion: 8, jquery: true */
+/* jshint esversion: 8 */
 
 // Phaser configuration
 let config = {
@@ -240,7 +240,7 @@ setInterval(alienFire, 3000);
 function alienFire() {
     if (isLive === true) {
         let enemy = attacker.children.entries[Phaser.Math.Between(0, attacker.children.entries.length - 1)];
-        manageAlienLaser(scene.physics.add.sprite(enemy.x, enemy.y, "laser"), enemy)
+        manageAlienLaser(scene.physics.add.sprite(enemy.x, enemy.y, "laser"), enemy);
     }
 
 }
@@ -252,7 +252,7 @@ let ufos = [];
 /**Function to generate UFO into gameplay */
 function makeUfo() {
     if (isLive === true) {
-        manageUfo(scene.physics.add.sprite(0, 60, "ufo"))
+        manageUfo(scene.physics.add.sprite(0, 60, "ufo"));
     }
 }
 
@@ -262,7 +262,7 @@ setInterval(function () {
         for (let i = 0; i < ufos.length; i++) {
             let ufo = ufos[i];
             if (ufo.isDestroyed == false) {
-                manageAlienLaser(scene.physics.add.sprite(ufo.x, ufo.y, "laser"), ufo)
+                manageAlienLaser(scene.physics.add.sprite(ufo.x, ufo.y, "laser"), ufo);
             } else {
                 ufos.splice(i, 1);
             }
@@ -278,7 +278,7 @@ function manageUfo(ufo) {
     scene.physics.add.overlap(ufo, ufoArea, function () {
         ufo.destroy();
         ufo.isDestroyed = true;
-    })
+    });
 }
 
 //PLAYER FIRE
@@ -373,12 +373,12 @@ let startBtn = document.getElementById("startBtn");
 // When the user loads open the homeModal
 window.onload = function () {
     homeModal.style.display = "block";
-}
+};
 
 // When the user clicks on start button, close the homeModal for gameplay
 startBtn.onclick = function () {
     homeModal.style.display = "none";
-}
+};
 
 // Get instructions modal
 let instructionsModal = document.getElementById("instructionsModal");
@@ -390,7 +390,7 @@ let instructionsBtn = document.getElementById("instructionsBtn");
 instructionsBtn.onclick = function () {
     homeModal.style.display = "none";
     instructionsModal.style.display = "block";
-}
+};
 
 //Get scoreboardModal
 let scoreboardModal = document.getElementById("scoreboardModal");
@@ -402,16 +402,16 @@ let scoreboardBtn = document.getElementById("scoreboardBtn");
 scoreboardBtn.onclick = function () {
     homeModal.style.display = "none";
     scoreboardModal.style.display = "block";
-}
+};
 
 //Get instructions back button
-let instructionBackBtn = document.getElementById("instructionsBackBtn");
+let instructionsBackBtn = document.getElementById("instructionsBackBtn");
 
 //When back button clicked hide instructions modal and show homeModal
 instructionsBackBtn.onclick = function () {
     instructionsModal.style.display = "none";
     homeModal.style.display = "block";
-}
+};
 
 //Get scoreboard back button
 let scoreboardBackBtn = document.getElementById("scoreboardBackBtn");
@@ -420,4 +420,4 @@ let scoreboardBackBtn = document.getElementById("scoreboardBackBtn");
 scoreboardBackBtn.onclick = function () {
     scoreboardModal.style.display = "none";
     homeModal.style.display = "block";
-}
+};
