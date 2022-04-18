@@ -1,5 +1,63 @@
 /* jshint esversion: 8 */
 
+//MODALS
+// Get the homeModal
+let homeModal = document.getElementById("homeModal");
+
+// Get the start button which will close the modal to reveal the game
+let startBtn = document.getElementById("startBtn");
+
+// When the user loads open the homeModal
+window.onload = function () {
+    homeModal.style.display = "block";
+};
+
+// When the user clicks on start button, close the homeModal for gameplay
+
+
+// Get instructions modal
+let instructionsModal = document.getElementById("instructionsModal");
+
+// Get the instructions button
+let instructionsBtn = document.getElementById("instructionsBtn");
+
+// When the user clicks on the instructions button, open the instructions modal
+instructionsBtn.onclick = function () {
+    homeModal.style.display = "none";
+    instructionsModal.style.display = "block";
+};
+
+//Get scoreboardModal
+let scoreboardModal = document.getElementById("scoreboardModal");
+
+//Get scoreboard button to open scoreboard modal
+let scoreboardBtn = document.getElementById("scoreboardBtn");
+
+//When scoreboard button clicked show scoreboard
+scoreboardBtn.onclick = function () {
+    homeModal.style.display = "none";
+    scoreboardModal.style.display = "block";
+};
+
+//Get instructions back button
+let instructionsBackBtn = document.getElementById("instructionsBackBtn");
+
+//When back button clicked hide instructions modal and show homeModal
+instructionsBackBtn.onclick = function () {
+    instructionsModal.style.display = "none";
+    homeModal.style.display = "block";
+};
+
+//Get scoreboard back button
+let scoreboardBackBtn = document.getElementById("scoreboardBackBtn");
+
+//When back button clicked hide scoreboard modal and show homeModal
+scoreboardBackBtn.onclick = function () {
+    scoreboardModal.style.display = "none";
+    homeModal.style.display = "block";
+};
+
+//GAME
 // Phaser configuration
 let config = {
     type: Phaser.AUTO,
@@ -91,8 +149,9 @@ function create() {
     //Shoot event listner
     scene.input.keyboard.on('keydown-SPACE', shoot);
 
-    /**Start game function activated on a pointerdown event */
-    this.input.on('pointerdown', function () {
+    /**Start game function activated when start game button clicked */
+    startBtn.onclick = function () {
+        homeModal.style.display = "none";
         if (isLive === false) {
             isLive = true;
             setInterval(makeUfo, 15000);
@@ -100,7 +159,7 @@ function create() {
         } else {
             shoot();
         }
-    });
+    };
     initAliens();
 }
 
@@ -363,61 +422,3 @@ function endGame(con) {
     //reloads current page to restart
     location.reload();
 }
-
-// Get the homeModal
-let homeModal = document.getElementById("homeModal");
-
-// Get the start button which will close the modal to reveal the game
-let startBtn = document.getElementById("startBtn");
-
-// When the user loads open the homeModal
-window.onload = function () {
-    homeModal.style.display = "block";
-};
-
-// When the user clicks on start button, close the homeModal for gameplay
-startBtn.onclick = function () {
-    homeModal.style.display = "none";
-};
-
-// Get instructions modal
-let instructionsModal = document.getElementById("instructionsModal");
-
-// Get the instructions button
-let instructionsBtn = document.getElementById("instructionsBtn");
-
-// When the user clicks on the instructions button, open the instructions modal
-instructionsBtn.onclick = function () {
-    homeModal.style.display = "none";
-    instructionsModal.style.display = "block";
-};
-
-//Get scoreboardModal
-let scoreboardModal = document.getElementById("scoreboardModal");
-
-//Get scoreboard button to open scoreboard modal
-let scoreboardBtn = document.getElementById("scoreboardBtn");
-
-//When scoreboard button clicked show scoreboard
-scoreboardBtn.onclick = function () {
-    homeModal.style.display = "none";
-    scoreboardModal.style.display = "block";
-};
-
-//Get instructions back button
-let instructionsBackBtn = document.getElementById("instructionsBackBtn");
-
-//When back button clicked hide instructions modal and show homeModal
-instructionsBackBtn.onclick = function () {
-    instructionsModal.style.display = "none";
-    homeModal.style.display = "block";
-};
-
-//Get scoreboard back button
-let scoreboardBackBtn = document.getElementById("scoreboardBackBtn");
-
-//When back button clicked hide scoreboard modal and show homeModal
-scoreboardBackBtn.onclick = function () {
-    scoreboardModal.style.display = "none";
-    homeModal.style.display = "block";
-};
