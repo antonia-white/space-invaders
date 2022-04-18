@@ -26,8 +26,24 @@
 
 <body>
     <img id="logo" src="assets/media/space-invaders-logo.png" alt="Space Invaders alien">
-    <!--move width and height to CSS by using an id -->
     <h1>Space Invaders</h1>
+
+    <!--Home modal-->
+    <button id="myBtn">Open Modal</button>
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <button id="startBtn" class="homeBtn">Start</button>
+            <button id="instructionsBtn" class="homeBtn">Instructions</button>
+            <button id="scoreboardBtn" class="homeBtn">Scoreboard</button>
+        </div>
+
+    </div>
+
     <main id="game"></main>
     <!--JavaScript-->
     <script src="assets/js/script.js"></script>
