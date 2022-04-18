@@ -359,26 +359,35 @@ function checkCollision(spriteA, spriteB) {
 
 /**Ends game */
 function endGame(con) {
-    alert(`You ${con}! Score: ${score}`); //change to modal
+    alert(`You ${con}! Score: ${score}`); //change to homeModal
     //reloads current page to restart
     location.reload();
 }
 
-// Get the modal
-var modal = document.getElementById("myModal");
+// Get the homeModal
+var homeModal = document.getElementById("homeModal");
 
-// Get the button that opens the modal
+// Get the button that opens the homeModal
 var btn = document.getElementById("myBtn");
 
-// Get the <span> element that closes the modal
+// Get the start button which will close the modal to reveal the game
 let startBtn = document.getElementById("startBtn");
 
-// When the user clicks on the button, open the modal
+// When the user clicks on the button, open the homeModal
 btn.onclick = function() {
-  modal.style.display = "block";
+  homeModal.style.display = "block";
 }
 
-// When the user clicks on <span> (x), close the modal
+// When the user clicks on <span> (x), close the homeModal
 startBtn.onclick = function() {
-  modal.style.display = "none";
+  homeModal.style.display = "none";
+}
+
+// Get the instructions button
+let instructionsBtn = document.getElementById("instructionsBtn");
+
+// When the user clicks on the instructions button, open the instructions modal
+instructionsBtn.onclick = function() {
+    homeModal.style.display = "none";
+    instructionsModal.style.display = "block";
 }
