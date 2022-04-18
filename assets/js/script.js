@@ -367,14 +367,11 @@ function endGame(con) {
 // Get the homeModal
 let homeModal = document.getElementById("homeModal");
 
-// Get the button that opens the homeModal
-let btn = document.getElementById("myBtn");
-
 // Get the start button which will close the modal to reveal the game
 let startBtn = document.getElementById("startBtn");
 
-// When the user clicks on the button, open the homeModal
-btn.onclick = function () {
+// When the user loads open the homeModal
+window.onload = function () {
     homeModal.style.display = "block";
 }
 
