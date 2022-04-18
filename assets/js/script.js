@@ -383,6 +383,9 @@ startBtn.onclick = function() {
   homeModal.style.display = "none";
 }
 
+// Get instructions modal
+let instructionsModal = document.getElementById("instructionsModal");
+
 // Get the instructions button
 let instructionsBtn = document.getElementById("instructionsBtn");
 
@@ -390,4 +393,26 @@ let instructionsBtn = document.getElementById("instructionsBtn");
 instructionsBtn.onclick = function() {
     homeModal.style.display = "none";
     instructionsModal.style.display = "block";
+}
+
+//Get back button
+let backBtn = document.getElementById("backBtn");
+
+//Get scoreboardModal
+let scoreboardModal = document.getElementById("scoreboardModal");
+
+//Get scoreboard button to open scoreboard modal
+let scoreboardBtn = document.getElementById("scoreboardBtn");
+
+//When scoreboard button clicked show scoreboard
+scoreboardBtn.onclick = function() {
+    homeModal.style.display = "none";
+    scoreboardModal.style.display = "block";
+}
+
+//When back button clicked hide instructions and scoreboard modal and show homeModal
+backBtn.onclick = function() {
+    instructionsModal.style.display = "none";
+    scoreboardModal.style.display = "none";
+    homeModal.style.display = "block";
 }
