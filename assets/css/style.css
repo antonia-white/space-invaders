@@ -82,7 +82,7 @@ p {
     margin-top: 0;
 }
 
-#backBtn {
+.backBtn {
     background-color: black;
     border: 3px solid white;
     border-radius: 15px;
@@ -99,8 +99,8 @@ p {
     margin-top: 10px;
 }
 
-#backBtn:hover,
-#backBtn:focus {
+.backBtn:hover,
+.backBtn:focus {
     cursor: pointer;
     background-color: #1f1f1f;
 }
@@ -110,4 +110,5 @@ p {
     height: 390px;
     width: 750px;
     overflow: scroll;
+    overflow-x: hidden;
 }
