@@ -146,7 +146,17 @@ function create() {
     scene.physics.add.existing(ufoArea);
 
     //Add spaceship - sprites can be animated. Set world bounds so unable to drive over edge of screen
-    spaceship = scene.physics.add.sprite(400, 560, "spaceship").setCollideWorldBounds(true);
+    spaceship = scene.physics.add.sprite(400, 560, "spaceship").setCollideWorldBounds(true).setInteractive({draggable: true});
+
+    // Controls for Mobile device
+        spaceship.on('drag', function(pointer, dragX){
+            this.x = dragX;
+        });
+
+        this.input.addPointer(2);
+
+        pointer1 = this.input.pointer1;
+        pointer2 = this.input.pointer2;
 
     //Add score and lives text
     scoreText = scene.add.text(16, 16, "Score: " + score, {
@@ -159,7 +169,10 @@ function create() {
     });
 
     //Shoot event listner
+    //Keyboard
     scene.input.keyboard.on('keydown-SPACE', shoot);
+    //Touchscreen
+    scene.input.on('pointerdown', shoot);
 
     /**Start game function activated when start game button clicked */
     startBtn.onclick = function () {
