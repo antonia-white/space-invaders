@@ -163,6 +163,7 @@ function create() {
 
     /**Start game function activated when start game button clicked */
     startBtn.onclick = function () {
+        //Remove home screen
         homeModal.style.display = "none";
         if (isLive === false) {
             isLive = true;
@@ -430,8 +431,12 @@ function checkCollision(spriteA, spriteB) {
 
 /**Ends game */
 function endGame(con) {
+    //Pauses scene
     scene.scene.pause();
+    //Sops gameplay
     isLive = false;
+    //Display end game screen
     endGameModal.style.display = "block";
+    //Adds outcome and score to display
     document.getElementById("end-game-message").innerHTML += `You ${con}! Score: ${score}`;
 };
