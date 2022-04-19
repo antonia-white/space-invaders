@@ -144,25 +144,3 @@ p {
     margin-top: 200px;
     margin-left: 250px;
 }
-
-/* Media query to target tablets - add movement buttons */
-@media (min-width:900px)  {
-    .show-buttons {
-        display:block
-    }
-}
-
-.touch-controls {
-    display: inline-block;
-    width: 25%;
-    position: absolute;
-    bottom: 10%;
-}
-
-#right-btn {
-    right: 20%;
-}
-
-#left-btn {
-    left: 20%;
-}
