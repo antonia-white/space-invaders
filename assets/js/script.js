@@ -57,6 +57,18 @@ scoreboardBackBtn.onclick = function () {
     homeModal.style.display = "block";
 };
 
+//End game modal
+let endGameModal = document.getElementById("endGameModal")
+
+//get home screen button
+let homeScreenBtn = document.getElementById("homeScreenBtn");
+
+// When home button clicked hide end game modal and show home modal
+homeScreenBtn.onclick = function () {
+    endGameModal.style.display = "none";
+    location.reload();
+};
+
 //GAME
 // Phaser configuration
 let config = {
@@ -418,7 +430,8 @@ function checkCollision(spriteA, spriteB) {
 
 /**Ends game */
 function endGame(con) {
-    alert(`You ${con}! Score: ${score}`); //change to homeModal
-    //reloads current page to restart
-    location.reload();
-}
+    scene.scene.pause();
+    isLive = false;
+    endGameModal.style.display = "block";
+    document.getElementById("end-game-message").innerHTML += `You ${con}! Score: ${score}`;
+};
