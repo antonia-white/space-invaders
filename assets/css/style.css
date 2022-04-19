@@ -140,7 +140,46 @@ p {
 #end-game-message {
     font-size: xx-large;
     font-weight: bold;
-    position:absolute;
+    position: absolute;
     margin-top: 200px;
     margin-left: 250px;
+}
+
+#small-screen-modal{
+    display: none;
+}
+
+/* Media query for mobiles and small screens to display message to play on a larger screen */
+@media screen and (min-width: 0px) and (max-width: 800px) {
+
+    /* Hide game */
+    #game {
+        display: none;
+    }
+
+    /* Hide modals */
+    .modal {
+        display: none;
+    }
+
+    /* Hide modal content */
+    .modal-content {
+        display: none;
+    }
+
+    /* Show small screen modal */
+    #small-screen-modal {
+        display: block;
+        background-color: #000000e0;
+        margin: 20px;
+        border: 1px solid #888;
+    }
+}
+
+/* Small screen modal content */
+#small-screen-modal-content {
+    font-size: 60vw;
+    font-weight: bold;
+    padding: 20px;
+    margin: 20px;
 }
