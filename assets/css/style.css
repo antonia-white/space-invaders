@@ -113,3 +113,34 @@ p {
     overflow: scroll;
     overflow-x: hidden;
 }
+
+#homeScreenBtn {
+    background-color: black;
+    border: 3px solid white;
+    border-radius: 15px;
+    color: white;
+    text-align: center;
+    font-size: xx-large;
+    font-family: 'Bungee', cursive;
+    text-decoration: none;
+    display: block;
+    height: 90px;
+    width: 180px;
+    margin-left: 297px;
+    position: absolute;
+    margin-top: 500px;
+}
+
+#homeScreenBtn:hover,
+#homeScreenBtn:focus {
+    cursor: pointer;
+    background-color: #1f1f1f;
+}
+
+#end-game-message {
+    font-size: xx-large;
+    font-weight: bold;
+    position:absolute;
+    margin-top: 200px;
+    margin-left: 250px;
+}
