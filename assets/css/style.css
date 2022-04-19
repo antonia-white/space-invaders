@@ -145,12 +145,13 @@ p {
     margin-left: 250px;
 }
 
-#small-screen-modal{
+#small-screen-modal {
     display: none;
 }
 
 /* Media query for mobiles and small screens to display message to play on a larger screen */
-@media screen and (min-width: 0px) and (max-width: 800px) {
+@media screen and (min-width: 0px) and (max-width: 800px),
+screen and (max-height: 590px) {
 
     /* Hide game */
     #game {
