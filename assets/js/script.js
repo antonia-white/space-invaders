@@ -37,6 +37,7 @@ let scoreboardBtn = document.getElementById("scoreboardBtn");
 scoreboardBtn.onclick = function () {
     homeModal.style.display = "none";
     scoreboardModal.style.display = "block";
+    makeScoreboard();
 };
 
 //Get instructions back button
@@ -456,7 +457,6 @@ function endGame(con) {
     //Adds outcome and score to display
     document.getElementById("end-game-message").innerHTML += `You ${con}! Score: ${score}`;
     createHighScores(score);
-    makeScoreboard();
 };
 
 // CREATE HIGH SCORES ARRAY FOR SCOREBOARD
