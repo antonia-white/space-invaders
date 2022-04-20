@@ -456,10 +456,10 @@ function endGame(con) {
     //Adds outcome and score to display
     document.getElementById("end-game-message").innerHTML += `You ${con}! Score: ${score}`;
     createHighScores(score);
+    makeScoreboard();
 };
 
-// https://www.youtube.com/watch?v=DFhmNLKwwGw&t=543s
-// Scoreboard and high scores
+// CREATE HIGH SCORES ARRAY FOR SCOREBOARD
 // Set variable to limit high scores to 10
 function createHighScores(score) {
     // let numberOfHighscore = 10;
@@ -488,3 +488,11 @@ function createHighScores(score) {
     localStorage.setItem('highScores', JSON.stringify(highScores));
     console.log("This is the highscores array", highScores);
 };
+
+// Change scoreboard HTML to list of 10 ordered highscores -- doesn't work because when I reload the game HTML will reload too
+function makeScoreboard() {
+    let list = "<li>" + JSON.parse(localStorage.getItem("highScores")).join("</li><li>") + "</li>";
+    document.getElementById("scoreboard-list").innerHTML = list;
+    console.log("This is the list item:",list);
+    console.log("This is the type of data the list item is:", typeof list);
+}
