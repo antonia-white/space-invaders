@@ -190,3 +190,8 @@ em {
   font-weight: lighter; 
   font-size: small;
 }
+
+.morse-code {
+    font-weight: bolder;
+    size: larger;
+}
