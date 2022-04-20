@@ -195,3 +195,15 @@ em {
     font-weight: bolder;
     size: larger;
 }
+
+#scoreboard-list{
+    color: white;
+    font-size: large;
+    padding-left: 0px;
+    margin: 20px;
+    font-family: 'Coda', cursive;
+    text-align: center;
+    list-style-position: inside;
+    font-size: 25px;
+    font-weight: bold;
+}
