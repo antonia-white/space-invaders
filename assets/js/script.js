@@ -147,17 +147,19 @@ function create() {
     scene.physics.add.existing(ufoArea);
 
     //Add spaceship - sprites can be animated. Set world bounds so unable to drive over edge of screen
-    spaceship = scene.physics.add.sprite(400, 560, "spaceship").setCollideWorldBounds(true).setInteractive({draggable: true});
+    spaceship = scene.physics.add.sprite(400, 560, "spaceship").setCollideWorldBounds(true).setInteractive({
+        draggable: true
+    });
 
     // Controls for Mobile device
-        spaceship.on('drag', function(pointer, dragX){
-            this.x = dragX;
-        });
+    spaceship.on('drag', function (pointer, dragX) {
+        this.x = dragX;
+    });
 
-        this.input.addPointer(2);
+    this.input.addPointer(2);
 
-        pointer1 = this.input.pointer1;
-        pointer2 = this.input.pointer2;
+    pointer1 = this.input.pointer1;
+    pointer2 = this.input.pointer2;
 
     //Add score and lives text
     scoreText = scene.add.text(16, 16, "Score: " + score, {
@@ -453,4 +455,30 @@ function endGame(con) {
     endGameModal.style.display = "block";
     //Adds outcome and score to display
     document.getElementById("end-game-message").innerHTML += `You ${con}! Score: ${score}`;
+    createHighScores(score);
+};
+
+// https://www.youtube.com/watch?v=DFhmNLKwwGw&t=543s
+// Scoreboard and high scores
+// Set variable to limit high scores to 10
+function createHighScores(score) {
+    let numberOfHighscore = 10;
+    // Convert score from number into string for local storgae (no numbers)
+    let stringScore = score.toString();
+    console.log("This is the score string variable", stringScore);
+    //Add score to local storage - only accepts strings
+    localStorage.setItem('score', stringScore)
+    //Access previous local storage highscores array or create a new array if it's the first time
+    let highScores = JSON.parse(localStorage.getItem("highScores")) || [];
+    //Push score from local storage onto highscores array
+    highScores.push(localStorage.getItem('score'));
+    //Sort highscores into descending value - https://stackoverflow.com/questions/1063007/how-to-sort-an-array-of-integers-correctly
+    highScores.sort(function (a, b) {
+        return a - b;
+    });
+    //Splice highscores array at the 10th index
+    highScores.splice(10);
+    //Save highscores into local storage
+    localStorage.setItem('highScores', JSON.stringify(highScores));
+    console.log("This is the highscores array", highScores);
 };
