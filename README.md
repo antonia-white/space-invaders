@@ -40,16 +40,26 @@ As a user of the Space Invader game, I want to:
 ***
 
 ### Wireframes
+
 - Welcome wireframe in desktop view
-![welcome page wireframe](documentation/wireframes/space-invaders-welcome-screen-website-wireframe.png)
+
+ ![welcome page wireframe](documentation/wireframes/space-invaders-welcome-screen-website-wireframe.png)
+
 - Instructions wireframe in desktop view
-![instructions wireframe](documentation/wireframes/space-invaders-instructions-screen-website-wireframe.png)
+
+ ![instructions wireframe](documentation/wireframes/space-invaders-instructions-screen-website-wireframe.png)
+
 - Scoreboard wireframe in desktop view
-![scoreboard wireframe](documentation/wireframes/space-invaders-scoreboard-screen-website-wireframe.png)
+
+ ![scoreboard wireframe](documentation/wireframes/space-invaders-scoreboard-screen-website-wireframe.png)
+
 - Gameplay wireframe in desktop view
-![desktop gameplay wireframe](documentation/wireframes/space-invaders-gameplay-website-wireframe.png)
+
+ ![desktop gameplay wireframe](documentation/wireframes/space-invaders-gameplay-website-wireframe.png)
+
 - Gameplay wireframe in mobile view
-![mobile gameplay wireframe](documentation/wireframes/space-invaders-gameplay-mobile-wireframe.png)
+
+ ![mobile gameplay wireframe](documentation/wireframes/space-invaders-gameplay-mobile-wireframe.png)
 
 ***
 
@@ -57,12 +67,46 @@ As a user of the Space Invader game, I want to:
 
 ### Existing Features 
 
-- __Example feature - *.html__
+- __Home Menu__
 
-  - Description of feature
-  - Why the feature is neccessary 
+  - The home menu modal loads when the window loads. It overlays the game area. The home menu has three buttons: the start button, the instructions button, and the scoreboard button.
+  - The home menu allows the user to navigate around the modals and/or start gameplay. Clicking the start button will close the modal and begin gameplay. Clicking the instructions button will close the home menu modal and reveal the instructions modal. Clicking the scoreboard button will close the home menu modal and reveal the scoreboard modal.
 
-    >![Example](documentation/testing/example-screenshot.png)
+    >![Home Menu](documentation/testing/home-menu-screenshot.png)
+
+- __Instructions__
+
+  - The instructions modal loads when the instructions button on the home modal is clicked. The instructions overlay the game area. The instructions modal has scrollable text and a back button.
+  - The instuctions modal content holds instructions and controls on how to play space invaders, wether on a keyboard or touchscreen device. The text is written as if it is an incomming message to the spaceship (the ship represents the player in the game), this allows some pre-text to the game to be established and gives a more immersive experience. The back button allows users to navigate back to the home menu - the back button closes the instructions modal and loads the home menu modal.
+
+    >![Instructions](documentation/testing/instructions-screenshot.png)
+
+- __Scoreboard__
+
+  - The scoreboard modal loads when the scoreboard button on the home modal is clicked. The scoreboard overlay the game area. If there is no cache in local storage of previous gameplay (i.e., if it is the first time playing the game) the scoreboard will display text indicating that there are no highscores (see below screenshot). If there is local storage of previous scores a list will show the top 10 highscores for the game (see below screenshot). The scoreboard also has a back button.
+  - The scoreboard allows users to keep a record of previous highscores on that device. This adds a competitive element to the game, aiming to get a higher and higher highscore. The back button allows users to navigate back to the home menu - the back button closes the scoreboard modal and loads the home menu modal.
+
+    >![Scoreboard](documentation/testing/scoreboard-screenshot.png)
+    >![Empty Scoreboard](documentation/testing/empty-scoreboard-screenshot.png)
+
+- __The Game__
+
+  - The game is space invaders and is the main content of the website. The player in this game is a spaceship which can move on a horizontal axis at a limited velocity. The aim of the game is to clear the game area of alien enemies (which shoot directly towards the player and also move on a horizontal axis). The player must dodge oncoming fire to survive. The player can return fire to destroy enemy aliens. UFOs will occasionally fly abouve, these hostiles have a higher rate of fire and their fire has a higher velocity (aka harder to dodge). The game gets progressivley more difficult with time as the velocity of enemy alien fire increases with every shot that the aliens take.
+  - The purpose of the game is to entertain.
+
+    >![Gameplay](documentation/testing/gameplay-screenshot.png)
+
+- __Score Counter__
+
+  - The score counter displays the users current score.
+
+    >![Score Counter](documentation/testing/score-counter-screenshot.png)
+
+- __Lives Counter__
+
+  - The lives counter displays the users current lives. Once the counter hits 0 it's game over.
+
+    >![Lives Counter](documentation/testing/lives-counter-screenshot.png)
 
 ### Features Left to Implement 
 
