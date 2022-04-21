@@ -27,7 +27,7 @@
 
 ## Unfixed Bugs 
 
-To the best of my knowledge, there are no unfixed-bugs.
+Sporadically throughout gameplay the laser image (laser.svg) which represents player fire and enemy fire will be reduced in size - appearing fainter. This isn't the case for all lasers fired. I currently don't know what causes this issue. However, it doesn't have a major impact on gameplay.
 
 ***
 
