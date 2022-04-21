@@ -33,8 +33,9 @@ As a user of the Space Invader game, I want to:
 
 - Google Fonts
   Font styles were taken from the open source [Google Fonts](https://fonts.google.com/).
-  - The typography for Space Invaders logo is font-family ... link to font and explain choice
-  - The typography for the body of the website is font-family ... link to font and explain choice
+  - The typography for Space Invaders logo is font-family [Press+Start+2P](https://fonts.google.com/specimen/Press+Start+2P). This font design is based on the font designs from 1980s Namco arcade games. This gives the logo a classic retro gaming feel which is what I aimed to acheive with space invaders.
+  - The typography for the heading elements within the website is font-family [Bungee](https://fonts.google.com/specimen/Bungee). This font design shares characteristics of the Press+Start+2P design giving the website a hollistic design. This font is a more readable but still gameified design. The weight and capitilization of the font makes it a great choice for eyecatching headings.
+  - The typography for other text on the website is font-family [Coda](https://fonts.google.com/specimen/Coda). This font design is clean, unassuming and practical. The style merges well with the Bungee font-family and has a less impactful presence on the screen.
 
 ***
 
