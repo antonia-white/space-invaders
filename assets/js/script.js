@@ -218,7 +218,6 @@ function initAliens() {
 setInterval(moveAliens, 750);
 
 let xTimes = 0;
-let yTimes = 0;
 //Set starting direction to right
 let dir = "right";
 
