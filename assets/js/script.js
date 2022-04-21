@@ -438,7 +438,7 @@ function endGame(con) {
     //Adds outcome and score to display
     document.getElementById("end-game-message").innerHTML += `You ${con}! Score: ${score}`;
     createHighScores(score);
-};
+}
 
 // CREATE HIGH SCORES ARRAY FOR SCOREBOARD
 // Set variable to limit high scores to 10
@@ -453,7 +453,7 @@ function createHighScores(score) {
     let highScores = JSON.parse(localStorage.getItem("highScores")) || [];
     //Push score from local storage onto highscores array
     highScores.push(localStorage.getItem('score'));
-    console.log("This is the highscores array with string array elements", highScores)
+    console.log("This is the highscores array with string array elements", highScores);
     //Convert string array into number array for sorting
     JSON.parse(localStorage.getItem("highScores"));
     //Sort highscores into descending value - https://stackoverflow.com/questions/1063007/how-to-sort-an-array-of-integers-correctly
@@ -468,7 +468,7 @@ function createHighScores(score) {
     //Save highscores into local storage
     localStorage.setItem('highScores', JSON.stringify(highScores));
     console.log("This is the highscores array", highScores);
-};
+}
 
 // Change scoreboard HTML to list of 10 ordered highscores -- doesn't work because when I reload the game HTML will reload too
 function makeScoreboard() {
@@ -479,7 +479,6 @@ function makeScoreboard() {
 }
 
 // Alter modal content styling if playing on chrome or edge browsers for a perfect overlay - else do nothing
-// Uncaught TypeError: Cannot set properties of undefined (setting 'margin')at script.js:484:67
 if ((window.navigator.userAgent.indexOf("Chrome") > -1) || (window.navigator.userAgent.indexOf("Edge/") > -1)) {
     let modalContent = document.getElementsByClassName("modal-content");
     for (var i = 0; i < modalContent.length; i++) {
