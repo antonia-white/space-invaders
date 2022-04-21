@@ -66,7 +66,12 @@ As a user of the Space Invader game, I want to:
 
 ### Features Left to Implement 
 
-- Example feature name
+- Online scoreboard
+  - Description of feature
+  - Why this feature is neccessary
+  - Why this feature hasn't yet been implimented
+
+- Improved accessibility for mobile gaming
   - Description of feature
   - Why this feature is neccessary
   - Why this feature hasn't yet been implimented
@@ -126,7 +131,7 @@ Alternatively, if using Gitpod, you can click below to create your own workspace
 - Wireframes were generated with [Draw.io](https://app.diagrams.net/)
 - The favicon image is from the open source site [Favicon.io](https://favicon.io/emoji-favicons/herb)
 - The responsive design mockup was generated with [Am I Responsive Design](http://ami.responsivedesign.is/#)
-- The colour palette was generated with [Coolors](https://coolors.co/)
+- The colour palette was generated with [Color Combos](https://www.colorcombos.com/)
 - SVG files were taken from the open source site [SVG Repo](https://www.svgrepo.com/)
 - SVG files were resized with [iloveimg](https://www.iloveimg.com/)
 
