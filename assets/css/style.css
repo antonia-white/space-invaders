@@ -209,3 +209,7 @@ em {
     font-size: 25px;
     font-weight: bold;
 }
+
+#remove-bullet {
+    list-style-type: none;
+}
