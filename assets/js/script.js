@@ -479,6 +479,10 @@ function makeScoreboard() {
 }
 
 // Alter modal content styling if playing on chrome or edge browsers for a perfect overlay - else do nothing
+// Uncaught TypeError: Cannot set properties of undefined (setting 'margin')at script.js:484:67
 if ((window.navigator.userAgent.indexOf("Chrome") > -1) || (window.navigator.userAgent.indexOf("Edge/") > -1)) {
-    document.getElementsByClassName("modal-content").style.margin = "186px auto";
+    let modalContent = document.getElementsByClassName("modal-content");
+    for (var i = 0; i < modalContent.length; i++) {
+        modalContent[i].style.margin = "186px auto";
+    }
 }
