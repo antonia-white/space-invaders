@@ -33,15 +33,15 @@ Sporadically throughout gameplay the laser image (laser.svg) which represents pl
 
 - Website launched successfully on [Firefox](https://www.mozilla.org/en-GB/firefox/new/):
 
-  >![Firefox](documentation/testing/laptop-firefox-screenshot.png)
+  >![Firefox](documentation/testing/firefox-screenshot.png)
 
 - Website launched successfully on [Google Chrome](https://www.google.com/intl/en_uk/chrome/):
 
-  >![Google Chrome](documentation/testing/tablet-chrome-screenshot.png)
+  >![Google Chrome](documentation/testing/chrome-screenshot.png)
 
 - Website launched successfully on [Microsoft Edge](https://www.microsoft.com/en-us/edge):
 
-  >![Microsoft Edge](documentation/testing/mobile-edge-screenshot.png)
+  >![Microsoft Edge](documentation/testing/edge-screenshot.png)
 
 During manual testing I noticed the modal overlay wasn't perfectly alligned across the game area - resulting in a an overspill of the modal. This bug was replicated in Chrome and Edge. To improve compatibility across these browsers I implemented the following code:
 ```json
