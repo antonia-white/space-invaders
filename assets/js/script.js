@@ -1,37 +1,30 @@
 /* jshint esversion: 8 */
 
 //MODALS
-// Get the homeModal
+// Get the modals
 let homeModal = document.getElementById("homeModal");
+let instructionsModal = document.getElementById("instructionsModal");
+let scoreboardModal = document.getElementById("scoreboardModal");
+let endGameModal = document.getElementById("endGameModal");
 
-// Get the start button which will close the modal to reveal the game
+//Get the buttons
 let startBtn = document.getElementById("startBtn");
+let instructionsBtn = document.getElementById("instructionsBtn");
+let scoreboardBtn = document.getElementById("scoreboardBtn");
+let instructionsBackBtn = document.getElementById("instructionsBackBtn");
+let scoreboardBackBtn = document.getElementById("scoreboardBackBtn");
+let homeScreenBtn = document.getElementById("homeScreenBtn");
 
 // When the user loads open the homeModal
 window.onload = function () {
     homeModal.style.display = "block";
 };
 
-// When the user clicks on start button, close the homeModal for gameplay
-
-
-// Get instructions modal
-let instructionsModal = document.getElementById("instructionsModal");
-
-// Get the instructions button
-let instructionsBtn = document.getElementById("instructionsBtn");
-
 // When the user clicks on the instructions button, open the instructions modal
 instructionsBtn.onclick = function () {
     homeModal.style.display = "none";
     instructionsModal.style.display = "block";
 };
-
-//Get scoreboardModal
-let scoreboardModal = document.getElementById("scoreboardModal");
-
-//Get scoreboard button to open scoreboard modal
-let scoreboardBtn = document.getElementById("scoreboardBtn");
 
 //When scoreboard button clicked show scoreboard
 scoreboardBtn.onclick = function () {
@@ -40,29 +33,17 @@ scoreboardBtn.onclick = function () {
     makeScoreboard();
 };
 
-//Get instructions back button
-let instructionsBackBtn = document.getElementById("instructionsBackBtn");
-
 //When back button clicked hide instructions modal and show homeModal
 instructionsBackBtn.onclick = function () {
     instructionsModal.style.display = "none";
     homeModal.style.display = "block";
 };
 
-//Get scoreboard back button
-let scoreboardBackBtn = document.getElementById("scoreboardBackBtn");
-
-//When back button clicked hide scoreboard modal and show homeModal
+//When scoreboards back button clicked hide scoreboard modal and show homeModal
 scoreboardBackBtn.onclick = function () {
     scoreboardModal.style.display = "none";
     homeModal.style.display = "block";
 };
-
-//End game modal
-let endGameModal = document.getElementById("endGameModal")
-
-//get home screen button
-let homeScreenBtn = document.getElementById("homeScreenBtn");
 
 // When home button clicked hide end game modal and show home modal
 homeScreenBtn.onclick = function () {
@@ -493,6 +474,6 @@ function createHighScores(score) {
 function makeScoreboard() {
     let list = "<li>" + JSON.parse(localStorage.getItem("highScores")).join("</li><li>") + "</li>";
     document.getElementById("scoreboard-list").innerHTML = list;
-    console.log("This is the list item:",list);
+    console.log("This is the list item:", list);
     console.log("This is the type of data the list item is:", typeof list);
 }
