@@ -4,24 +4,22 @@
 
 ## Validator Testing 
 
-[FreeFormatter](https://www.freeformatter.com/html-validator.html) was used as a Validator.
-
 - HTML
   - No errors were returned in the index.html file when passing through the official [FreeFormatter's Validator](https://www.freeformatter.com/html-validator.html)
 
-    >![index.html](documentation/testing/ff-html-index-screenshot.png)
+    >![index.html](documentation/testing/html-validation-screenshot.png)
 
 
 - CSS
-  - No errors were found when passing through the official [Jigsaw validator](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fantonia-white.github.io%2Fanlief-ecological-consultancy)
+  - No errors were found when passing through the official [Jigsaw validator](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fantonia-white.github.io%2Fspace-invaders%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
   
-    >![style.css](documentation/testing/w3c-css-validator-screenshot.png)
+    >![style.css](documentation/testing/css-validation-screenshot.png)
 
 
 - JavaScript
-  - No errors were found when passing through the official [Unknown JS validator](link to said validator)
-  
-    >![script.js](documentation/testing/.png)
+  - No errors were found when passing through the official [JSHint](https://jshint.com/)
+  - The validator service wasn't able to recognise references to the Phaser 3 API, resulting in an incorrect result from JSHint of 19 undefined variables and one unused variable.
+    >![script.js](documentation/testing/javascript-validation-screenshot.png)
 
 ***
 
