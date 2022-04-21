@@ -54,7 +54,7 @@ if ((window.navigator.userAgent.indexOf("Chrome") > -1) || (window.navigator.use
     }
 }
 ```
-When the browser being used is Chrome or Edge, this code will target the divs with the class name "modal-content". The code loops through all elements with this class name to change the margin of the div to realign the modal content to fit perfectly ontop of the game without impacting deployments on Firefox.
+When the browser being used is Chrome or Edge, this code will target the divs with the class name "modal-content". The code loops through all elements with this class name to change the margin of the div to realign the modal content to fit perfectly ontop of the game - without impacting deployments on Firefox.
 ***
 
 ## Responsiveness
@@ -77,17 +77,26 @@ When the browser being used is Chrome or Edge, this code will target the divs wi
 ## User Story Testing
 
 A target user of the Space Invaders game will want to:
-1. have fun playing the game
-  >![]()
-2. have easy to use controls to play the game with
-  >![]()
-3. visit a retro looking game for an enjoyable/nostalgic experience
-  >![]()
-4. navigate through the website and game easily and fluidly
-  >![]()
-5. access instructions on how to play the game and game aims
-  >![]()
-6. see a scoreboard of local highscores
-  >![]()
+- [x] have fun playing the game
+   >The game space invaders was designed for entertainment.
+
+- [x] have easy to use controls to play the game with
+   >Space invaders has easy to use controls accessible for keyboard and touchscreen. These controls are outlined in the instructions modal. For the user to move their spaceship on keyboard they can use A and D keys or left and right arrow keys. Alternatively a user can drag the ship with their cursor or finger if using a touch screen device. To activate the game mechanic to shoot the hostiles, a user can press SPACE on keyboard or left click on mouse. If using a touchscreen device a user can tap the game area.
+
+- [x] visit a retro looking game for an enjoyable/nostalgic experience
+   >The classic, simple look of the game alongside the logo design reminiscent of 1980s Namco arcade games acheives this.
+   ![Gameplay](documentation/testing/gameplay-screenshot.png)
+
+- [x] navigate through the website and game easily and fluidly
+   >The home menu modal allows for simple navigation between modals with the click of a button. Back buttons on the instructions and scoreboard modals allow for navigation back to the home menu. Clciking the start button allows the user to begin gameplay.
+   ![Home Menu](documentation/testing/home-menu-screenshot.png)
+
+- [x] access instructions on how to play the game and game aims
+   >Details are given in the instructions modal.
+   ![Instructions](documentation/testing/instructions-screenshot.png)
+
+- [x] see a scoreboard of local highscores
+   >A list of top 10 high scores are listed in the scoreboard modal.
+   ![Scoreboard](documentation/testing/scoreboard-screenshot.png)
 
 ***
