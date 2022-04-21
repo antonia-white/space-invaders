@@ -24,7 +24,7 @@ As a user of the Space Invader game, I want to:
 ## UX
 
 ### Colour Scheme
-- A simple, dark space-like black and contrasting white with some purple, yellow and blue elements for a pop of colour. This colour palette aims to give a classic retro feel.
+- A simple, dark, space-like black and contrasting white with some purple, yellow and blue elements for a pop of colour. This colour palette aims to give a classic retro feel.
     >![colour palette](documentation/testing/color-palette.png)
 - No accessibility issues were returned when passing the colour scheme through the official [WebAIM](https://webaim.org/resources/contrastchecker/)
     >![webaim screenshot](documentation/testing/webaim-screenshot.png)
