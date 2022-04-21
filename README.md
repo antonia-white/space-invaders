@@ -5,7 +5,6 @@ Overview
 Target audience
 Why this website is useful
 
-Responsive mockup
 ![Responsive Mockup](documentation/testing/responsive-mockup.png)
 
 ***
@@ -19,18 +18,15 @@ As a user of the Space Invader game, I want to:
   4. navigate through the website and game easily and fluidly
   5. access instructions on how to play the game and game aims
   6. see a scoreboard of local highscores
-  7. ...
-  8. ...
 
 ***
 
 ## UX
 
 ### Colour Scheme
-- Describe colour scheme... (simple, black and white with some red/yellow elements - give a classic retro feel)
-    Link to colour pallett (needs updating)
+- A simple, dark space-like black and contrasting white with some purple, yellow and blue elements for a pop of colour. This colour palette aims to give a classic retro feel.
     >![colour palette](documentation/testing/color-palette.png)
-- Needs updating... No accessibility issues were returned when passing the colour scheme through the official [WebAIM](https://webaim.org/resources/contrastchecker/)
+- No accessibility issues were returned when passing the colour scheme through the official [WebAIM](https://webaim.org/resources/contrastchecker/)
     >![webaim screenshot](documentation/testing/webaim-screenshot.png)
 
 ### Typography
