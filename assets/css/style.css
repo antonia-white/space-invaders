@@ -194,7 +194,7 @@ em {
 /* Instructions content */
 .morse-code {
     font-weight: bolder;
-    size: larger;
+    font-size: larger;
 }
 
 /* Scoreboard content */
