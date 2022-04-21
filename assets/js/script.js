@@ -477,3 +477,8 @@ function makeScoreboard() {
     console.log("This is the list item:", list);
     console.log("This is the type of data the list item is:", typeof list);
 }
+
+// Alter modal content styling if playing on chrome or edge browsers for a perfect overlay - else do nothing
+if ((window.navigator.userAgent.indexOf("Chrome") > -1) || (window.navigator.userAgent.indexOf("Edge/") > -1)) {
+    document.getElementsByClassName("modal-content").style.margin = "186px auto";
+}
