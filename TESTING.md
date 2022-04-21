@@ -45,6 +45,16 @@ Sporadically throughout gameplay the laser image (laser.svg) which represents pl
 
   >![Microsoft Edge](documentation/testing/mobile-edge-screenshot.png)
 
+During manual testing I noticed the modal overlay wasn't perfectly alligned across the game area - resulting in a an overspill of the modal. This bug was replicated in Chrome and Edge. To improve compatibility across these browsers I implemented the following code:
+```json
+if ((window.navigator.userAgent.indexOf("Chrome") > -1) || (window.navigator.userAgent.indexOf("Edge/") > -1)) {
+    let modalContent = document.getElementsByClassName("modal-content");
+    for (var i = 0; i < modalContent.length; i++) {
+        modalContent[i].style.margin = "186px auto";
+    }
+}
+```
+When the browser being used is Chrome or Edge, this code will target the divs with the class name "modal-content". The code loops through all elements with this class name to change the margin of the div to realign the modal content to fit perfectly ontop of the game without impacting deployments on Firefox.
 ***
 
 ## Responsiveness
@@ -78,10 +88,6 @@ A target user of the Space Invaders game will want to:
 5. access instructions on how to play the game and game aims
   >![]()
 6. see a scoreboard of local highscores
-  >![]()
-7. ...
-  >![]()
-8. ...
   >![]()
 
 ***
