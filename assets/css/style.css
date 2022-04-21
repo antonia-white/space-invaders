@@ -191,11 +191,13 @@ em {
   font-size: small;
 }
 
+/* Instructions content */
 .morse-code {
     font-weight: bolder;
     size: larger;
 }
 
+/* Scoreboard content */
 #scoreboard-list{
     color: white;
     font-size: large;
