@@ -31,9 +31,6 @@ As a user of the Space Invader game, I want to:
 
 ### Typography
 
-- Font Awesome
-  - Social media icons were taken from [Font Awesome](https://fontawesome.com/) for use in...
-
 - Google Fonts
   Font styles were taken from the open source [Google Fonts](https://fonts.google.com/).
   - The typography for Space Invaders logo is font-family ... link to font and explain choice
@@ -84,9 +81,9 @@ As a user of the Space Invader game, I want to:
 - [GitHub Pages](https://antonia-white.github.io/space-invaders/) was used for deployment
 - [Git](https://git-scm.com/) was used for version control
 - [Am I Responsive](http://ami.responsivedesign.is/) was used to generate a mockup image
-- [Bootstrap](https://getbootstrap.com/) was used for website layout
+- [Phaser 3 API](https://photonstorm.github.io/phaser3-docs/) was used for game development
 - [Dev Tools](https://en.wikipedia.org/wiki/Web_development_tools) was used for testing and responsiveness
-- [ResizePixel](https://www.resizepixel.com/) was used for resizing and cropping images
+- [iloveimg](https://www.iloveimg.com/) was used for resizing and cropping svg images
 
 ***
 
