@@ -59,15 +59,15 @@ When the browser being used is Chrome or Edge, this code will target the divs wi
 
 - Website viewed in a mobile device:
 
-  >![Mobile view](documentation/testing/mobile-edge-screenshot.png)
+  >![Mobile view](documentation/testing/mobile-deployment-screenshot.png)
 
 - Website viewed in a tablet device:
 
-  >![Tablet view](documentation/testing/tablet-chrome-screenshot.png)
+  >![Tablet view](documentation/testing/tablet-deployment-screenshot.png)
 
 - Website viewed in a laptop device:
 
-  >![Laptop view](documentation/testing/laptop-firefox-screenshot.png)
+  >![Laptop view](documentation/testing/laptop-deployment-screenshot.png)
 
 
 ***
