@@ -120,6 +120,8 @@ As a user of the Space Invader game, I want to:
   - Why this feature is neccessary
   - Why this feature hasn't yet been implimented
 
+- Fix unfixed bug. Please refer to [TESTING.md](TESTING.md).
+
 ***
 
 ## Technologies
