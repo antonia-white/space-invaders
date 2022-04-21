@@ -209,3 +209,8 @@ em {
     font-size: 25px;
     font-weight: bold;
 }
+
+/* Target chrome browser to fix modal overlay positioning */
+.selector:not(*:root) {
+    margin: 186px auto;
+}
