@@ -126,7 +126,9 @@ As a user of the Space Invader game, I want to:
 
 - Fix unfixed bug. Please refer to [TESTING.md](TESTING.md).
 
-- set drag velocity (currently easier on tablet) - change warning in instructions if so
+- Reduce velocity of spaceship when dragging
+  - Provide air resistance to dragging the spaceship with a cursor or finger on touchscreen devices. A present, because of this gameplay is currently easier on tablet. 
+  - This is a finniky feature to implement and one I havn't been successful with so far. I would acheive this with more time by researching articles such as [this](https://dustinpfister.github.io/2018/10/30/phaser-physics-drag/).
 
 - sound
 
