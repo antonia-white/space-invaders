@@ -269,7 +269,6 @@ function manageAlienLaser(laser, enemy) {
     let angleOfFire = Phaser.Math.Angle.BetweenPoints(enemy, spaceship);
 
     //Calculate the velocity when given rotation and speed. Laser body stores the velocity
-    //https://newdocs.phaser.io/docs/3.55.2/focus/Phaser.Physics.Arcade.ArcadePhysics-velocityFromRotation
     scene.physics.velocityFromRotation(angleOfFire, alienLaserVelocity, laser.body.velocity);
 
     //Increases velocity after every shot
@@ -414,9 +413,6 @@ function manageLaser(laser) {
 
 //COLLISIONS
 
-//https://phaser.discourse.group/t/check-collision-overlap-between-sprites-without-physics/6696/3
-//https://photonstorm.github.io/phaser3-docs/Phaser.Geom.Intersects.html
-
 /**Detects collision between two sprites, returns boolean in scene's update method */
 function checkCollision(spriteA, spriteB) {
     let edgeA = spriteA.getBounds();
@@ -455,7 +451,7 @@ function createHighScores(score) {
     console.log("This is the highscores array with string array elements", highScores);
     //Convert string array into number array for sorting
     JSON.parse(localStorage.getItem("highScores"));
-    //Sort highscores into descending value - https://stackoverflow.com/questions/1063007/how-to-sort-an-array-of-integers-correctly
+    //Sort highscores into descending value
     console.log("This is highscores array as numbers and before sorting", highScores);
     highScores.sort(function (a, b) {
         return a - b;
