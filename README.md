@@ -103,7 +103,7 @@ As a user of the Space Invader game, I want to:
 
 - __Lives Counter__
 
-  - The lives counter displays the users current lives. Once the counter hits 0 it's game over.
+  - The lives counter displays the users current lives. The players spaceship will flash red to indicate a lost life, so that the user doesn't have to keep referring back to the lives counter. Once the counter hits 0 it's game over.
 
     >![Lives Counter](documentation/testing/lives-counter-screenshot.png)
 
@@ -125,8 +125,6 @@ As a user of the Space Invader game, I want to:
   - With additional time and research I would impliment this feature.
 
 - Fix unfixed bug. Please refer to [TESTING.md](TESTING.md).
-
-- Visual cue for lost life
 
 - set drag velocity (currently easier on tablet) - change warning in instructions if so
 
