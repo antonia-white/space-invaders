@@ -110,16 +110,29 @@ As a user of the Space Invader game, I want to:
 ### Features Left to Implement 
 
 - Online scoreboard
-  - Description of feature
-  - Why this feature is neccessary
-  - Why this feature hasn't yet been implimented
+  - The scoreboard would show usernames and scores of players globally who have acheived the highest scores.
+  - This feature would change the scoreboard from being on local storage (i.e., presumably one player on the one device) to global online storage. This would expand competition beyond competition on one device to copetition with all other users of the site.
+  - I currently do not have the knowledge to impliment this.
 
 - Improved accessibility for mobile gaming
-  - Description of feature
-  - Why this feature is neccessary
-  - Why this feature hasn't yet been implimented
+  - While designing space invaders I made the conscious decision to keep the game area a 800px x 600px box across all devices. This was to maintain the classic retro arcade game feel. Having the game fill the whole viewport would make the game more accessible to other devices but I feel it hinders the gameplay quality, makes the gameplay feel more modern and not giving the experience I wanted to acheive.
+  - Some users may not have access to devices with larger screen sizes so it is important to impliment accessibility for mobile users.
+  - This feature hasn't been implemented as I feel it currently retracts from the gaming experience. With additional time and experimentation I would work to facilitate space invaders gameplay to suit a mobile device.
+
+- Enemy bullet svg rotation towards player's spaceship
+  - As you can see in current gameplay, when an alien laser is fired the laser.svg moves directly towards the player. However, the laser.svg does not rotate towards the player and remains facing directly down.
+  - Adding rotation of the laser would increases immersion resulting in a better gaming experience.
+  - With additional time and research I would impliment this feature.
 
 - Fix unfixed bug. Please refer to [TESTING.md](TESTING.md).
+
+- Visual cue for lost life
+
+- set drag velocity (currently easier on tablet) - change warning in instructions if so
+
+- sound
+
+- time multiplier for score
 
 ***
 
@@ -176,6 +189,7 @@ Alternatively, if using Gitpod, you can click below to create your own workspace
 - Various snippets of code adapted from helpful posters on [Stack Overflow](https://stackoverflow.com/), including but not limited to:
   - [Centering a Phaser game in browser](https://stackoverflow.com/questions/51309375/how-do-i-move-phaser-game-to-the-center-of-a-browser)
   - [Array manipulation and sorting](https://stackoverflow.com/questions/1063007/how-to-sort-an-array-of-integers-correctly)
+- Multiple useful articles at [w3schools](https://www.w3schools.com/)
 - Using and manipulating data in local storage was taught by James Q Quick's tutorial found [here](https://www.youtube.com/watch?v=DFhmNLKwwGw&t=543s)
 - Game logic was influenced by vbs office's tutorial found [here](https://www.youtube.com/watch?v=8xMBzj8uZ7o&list=LL&index=1)
 
