@@ -485,28 +485,22 @@ function createHighScores(score) {
     // let numberOfHighscore = 10;
     // Convert score from number into string for local storage (no numbers)
     let stringScore = score.toString();
-    console.log("This is the score string variable", stringScore);
     //Add score to local storage - only accepts strings
     localStorage.setItem('score', stringScore);
     //Access previous local storage highscores array or create a new array if it's the first time
     let highScores = JSON.parse(localStorage.getItem("highScores")) || [];
     //Push score from local storage onto highscores array
     highScores.push(localStorage.getItem('score'));
-    console.log("This is the highscores array with string array elements", highScores);
     //Convert string array into number array for sorting
     JSON.parse(localStorage.getItem("highScores"));
     //Sort highscores into descending value
-    console.log("This is highscores array as numbers and before sorting", highScores);
     highScores.sort(function (a, b) {
         return a - b;
     }).reverse();
-    console.log("This is highscores array post sorting", highScores);
     //Splice highscores array at the 10th index
     highScores.splice(10);
-    console.log("This is highScores array after splicing at 10th index", highScores);
     //Save highscores into local storage
     localStorage.setItem('highScores', JSON.stringify(highScores));
-    console.log("This is the highscores array", highScores);
 }
 
 // Change scoreboard HTML to list of 10 ordered highscores -- doesn't work because when I reload the game HTML will reload too
