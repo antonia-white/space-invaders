@@ -170,6 +170,14 @@ Alternatively, if using Gitpod, you can click below to create your own workspace
 ### Content 
 
 - All text throughout the website is self-written
+- The framework used to create space invaders was [Phaser 3 API](https://photonstorm.github.io/phaser3-docs/) which has amazing documentation that I used extensively e.g.:
+  - [To calculate enemy fire velocity from rotation](https://newdocs.phaser.io/docs/3.55.2/focus/Phaser.Physics.Arcade.ArcadePhysics-velocityFromRotation)
+  - [To check collision overlaps between sprites](https://phaser.discourse.group/t/check-collision-overlap-between-sprites-without-physics/6696/3)
+- Various snippets of code adapted from helpful posters on [Stack Overflow](https://stackoverflow.com/), including but not limited to:
+  - [Centering a Phaser game in browser](https://stackoverflow.com/questions/51309375/how-do-i-move-phaser-game-to-the-center-of-a-browser)
+  - [Array manipulation and sorting](https://stackoverflow.com/questions/1063007/how-to-sort-an-array-of-integers-correctly)
+- Using and manipulating data in local storage was taught by James Q Quick's tutorial found [here](https://www.youtube.com/watch?v=DFhmNLKwwGw&t=543s)
+- Game logic was influenced by vbs office's tutorial found [here](https://www.youtube.com/watch?v=8xMBzj8uZ7o&list=LL&index=1)
 
 ### Media
 
@@ -179,5 +187,10 @@ Alternatively, if using Gitpod, you can click below to create your own workspace
 - The colour palette was generated with [Color Combos](https://www.colorcombos.com/)
 - SVG files were taken from the open source site [SVG Repo](https://www.svgrepo.com/)
 - SVG files were resized with [iloveimg](https://www.iloveimg.com/)
+
+### Acknowledgments
+
+- My mentor Tim
+- My friends and family for testing the site and helping me identify bugs
 
 ***
