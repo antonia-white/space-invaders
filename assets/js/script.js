@@ -100,6 +100,12 @@ function preload() {
     this.load.image("alien", "assets/media/alien.svg");
     this.load.image("laser", "assets/media/laser.svg");
     this.load.image("ufo", "assets/media/ufo.svg");
+
+    this.load.audio("gameOver", ["assets/media/game-end-sound.wav"]);
+    this.load.audio("hitAlien", ["assets/media/hit-hostile-sound.wav"]);
+    this.load.audio("lostLife", ["assets/media/lost-life-sound.wav"]);
+    this.load.audio("spaceshipLaser", ["assets/media/spaceship-laser-sound.wav"]);
+    this.load.audio("ufoSound", ["assets/media/ufo-sound.wav"])
 }
 
 //Set variables for gameplay
@@ -153,6 +159,14 @@ function create() {
         fill: '#FFF'
     });
 
+    //Add sounds
+    gameOver = this.sound.add("gameOver", {loop: false});
+    hitAlien = this.sound.add("hitAlien", {loop: false});
+    lostLife = this.sound.add("lostLife", {loop: false});
+    spaceshipLaser = this.sound.add("spaceshipLaser", {loop: false});
+    ufoSound = this.sound.add("ufoSound", {loop: true});
+
+
     //Shoot event listner
     //Keyboard
     scene.input.keyboard.on('keydown-SPACE', shoot);
@@ -196,6 +210,7 @@ function shoot() {
         if (isFiring == false) { //Prevents rapid firing
             manageLaser(scene.physics.add.sprite(spaceship.x, spaceship.y + -40, "laser"));
             isFiring = true;
+            spaceshipLaser.play();
         }
     }
 
@@ -282,6 +297,8 @@ function manageAlienLaser(laser, enemy) {
                 clearInterval(i);
                 //reduce lives by 1
                 lives--;
+                //play lost life sound
+                lostLife.play();
                 //display new lives text
                 livesText.setText("Lives: " + lives);
 
@@ -357,7 +374,9 @@ function manageUfo(ufo) {
     scene.physics.add.overlap(ufo, ufoArea, function () {
         ufo.destroy();
         ufo.isDestroyed = true;
+        ufoSound.stop();
     });
+    ufoSound.play();
 }
 
 //PLAYER FIRE
@@ -374,6 +393,8 @@ function manageLaser(laser) {
                     isFiring = false;
                     //destroy alien on impact
                     enemy.destroy();
+                    //Play sound
+                    hitAlien.play();
                     //increment score
                     score++;
                     //display new score
@@ -405,6 +426,11 @@ function manageLaser(laser) {
 
                     ufo.destroy();
                     ufo.isDestroyed = true;
+                    //Stop ufo sound
+                    ufoSound.stop();
+                    //Play hit sound
+                    hitAlien.play();
+                    //Increment score
                     score++;
                     ufoCount++;
                     //upate score display
@@ -437,8 +463,15 @@ function checkCollision(spriteA, spriteB) {
 function endGame(con) {
     //Pauses scene
     scene.scene.pause();
-    //Sops gameplay
+    //Stops gameplay
     isLive = false;
+    //Stops sounds
+    spaceshipLaser.stop();
+    hitAlien.stop();
+    lostLife.stop();
+    ufoSound.stop();
+    //Plays end game sound
+    gameOver.play();
     //Display end game screen
     endGameModal.style.display = "block";
     //Adds outcome and score to display
