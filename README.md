@@ -201,6 +201,7 @@ Alternatively, if using Gitpod, you can click below to create your own workspace
 - The colour palette was generated with [Color Combos](https://www.colorcombos.com/)
 - SVG files were taken from the open source site [SVG Repo](https://www.svgrepo.com/)
 - SVG files were resized with [iloveimg](https://www.iloveimg.com/)
+- Audio files were taken from [Mixkit's free open source arcade sound effects](https://mixkit.co/free-sound-effects/arcade/)
 
 ### Acknowledgments
 
