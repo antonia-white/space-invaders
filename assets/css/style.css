@@ -15,8 +15,7 @@ h1 {
     margin-right: auto;
 }
 
-/* center game in browser
-https://stackoverflow.com/questions/51309375/how-do-i-move-phaser-game-to-the-center-of-a-browser */
+/* center game in browser */
 canvas {
     display: block;
     margin: auto;
