@@ -503,7 +503,7 @@ function createHighScores(score) {
     localStorage.setItem('highScores', JSON.stringify(highScores));
 }
 
-// Change scoreboard HTML to list of 10 ordered highscores -- doesn't work because when I reload the game HTML will reload too
+// Change scoreboard HTML to list of 10 ordered highscores
 function makeScoreboard() {
     let list = "<li>" + JSON.parse(localStorage.getItem("highScores")).join("</li><li>") + "</li>";
     document.getElementById("scoreboard-list").innerHTML = list;
