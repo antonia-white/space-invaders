@@ -97,13 +97,13 @@ As a user of the Space Invader game, I want to:
 
 - __Score Counter__
 
-  - The score counter displays the users current score.
+  - The score counter displays the users current score. A sound is played when an alien is hit.
 
     >![Score Counter](documentation/testing/score-counter-screenshot.png)
 
 - __Lives Counter__
 
-  - The lives counter displays the users current lives. The players spaceship will flash red to indicate a lost life, so that the user doesn't have to keep referring back to the lives counter. Once the counter hits 0 it's game over.
+  - The lives counter displays the users current lives. The players spaceship will flash red and a sound will play to indicate a lost life, so that the user doesn't have to keep referring back to the lives counter. Once the counter hits 0 it's game over.
 
     >![Lives Counter](documentation/testing/lives-counter-screenshot.png)
 
@@ -129,8 +129,6 @@ As a user of the Space Invader game, I want to:
 - Reduce velocity of spaceship when dragging
   - Provide air resistance to dragging the spaceship with a cursor or finger on touchscreen devices. A present, because of this gameplay is currently easier on tablet. 
   - This is a finniky feature to implement and one I havn't been successful with so far. I would acheive this with more time by researching articles such as [this](https://dustinpfister.github.io/2018/10/30/phaser-physics-drag/).
-
-- sound
 
 - time multiplier for score
 
