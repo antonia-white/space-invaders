@@ -278,6 +278,7 @@ function manageAlienLaser(laser, enemy) {
             if (checkCollision(laser, spaceship)) {
                 //destroy laser on impact with spaceship
                 laser.destroy();
+                takenDamange();
                 clearInterval(i);
                 //reduce lives by 1
                 lives--;
@@ -299,6 +300,16 @@ function manageAlienLaser(laser, enemy) {
         clearInterval(i);
     });
 
+}
+
+//Taken damage to make spaceship flash red
+function takenDamange() {
+spaceship.tint = 0xb80404;
+this.scene.time.addEvent({
+    delay: 150,
+    callback: function(){ spaceship.clearTint(); },
+    callbackScope: spaceship,
+ });
 }
 
 //Set alien fire to every 3seconds
@@ -380,7 +391,7 @@ function manageLaser(laser) {
             //iterate through UFOs
             for (let step = 0; step < ufos.length; step++) {
                 let ufo = ufos[step];
-                //check collision between ufo and bullet
+                //check collision between ufo and laser
                 if (checkCollision(laser, ufo)) {
                     laser.destroy();
                     clearInterval(i);
