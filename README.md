@@ -119,7 +119,7 @@ As a user of the Space Invader game, I want to:
   - Some users may not have access to devices with larger screen sizes so it is important to impliment accessibility for mobile users.
   - This feature hasn't been implemented as I feel it currently retracts from the gaming experience. With additional time and experimentation I would work to facilitate space invaders gameplay to suit a mobile device.
 
-- Enemy bullet svg rotation towards player's spaceship
+- Enemy laser svg rotation towards player's spaceship
   - As you can see in current gameplay, when an alien laser is fired the laser.svg moves directly towards the player. However, the laser.svg does not rotate towards the player and remains facing directly down.
   - Adding rotation of the laser would increases immersion resulting in a better gaming experience.
   - With additional time and research I would impliment this feature.
@@ -189,6 +189,8 @@ Alternatively, if using Gitpod, you can click below to create your own workspace
 - Various snippets of code adapted from helpful posters on [Stack Overflow](https://stackoverflow.com/), including but not limited to:
   - [Centering a Phaser game in browser](https://stackoverflow.com/questions/51309375/how-do-i-move-phaser-game-to-the-center-of-a-browser)
   - [Array manipulation and sorting](https://stackoverflow.com/questions/1063007/how-to-sort-an-array-of-integers-correctly)
+- Various snippets of code from users of other sites, including but not limited to:
+  - [Flashing a sprite at HTML 5 Gave Devs](https://www.html5gamedevs.com/topic/44310-why-flashing-black-instead-of-red-in-this-tween/)
 - Multiple useful articles at [w3schools](https://www.w3schools.com/)
 - Using and manipulating data in local storage was taught by James Q Quick's tutorial found [here](https://www.youtube.com/watch?v=DFhmNLKwwGw&t=543s)
 - Game logic was influenced by vbs office's tutorial found [here](https://www.youtube.com/watch?v=8xMBzj8uZ7o&list=LL&index=1)
