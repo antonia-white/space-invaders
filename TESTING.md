@@ -44,7 +44,7 @@ Sporadically throughout gameplay the laser image (laser.svg) which represents pl
   >![Microsoft Edge](documentation/testing/edge-screenshot.png)
 
 During manual testing I noticed the modal overlay wasn't perfectly alligned across the game area - resulting in a an overspill of the modal. This bug was replicated in Chrome and Edge. To improve compatibility across these browsers I implemented the following code:
-```json
+```js
 if ((window.navigator.userAgent.indexOf("Chrome") > -1) || (window.navigator.userAgent.indexOf("Edge/") > -1)) {
     let modalContent = document.getElementsByClassName("modal-content");
     for (var i = 0; i < modalContent.length; i++) {
