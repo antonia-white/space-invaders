@@ -505,8 +505,12 @@ function createHighScores(score) {
 
 // Change scoreboard HTML to list of 10 ordered highscores
 function makeScoreboard() {
-    let list = "<li>" + JSON.parse(localStorage.getItem("highScores")).join("</li><li>") + "</li>";
-    document.getElementById("scoreboard-list").innerHTML = list;
+    if (JSON.parse(localStorage?.getItem("highScores"))) {
+        let list = `<li>${JSON.parse(localStorage?.getItem("highScores")).join("</li><li>")}</li>`;
+        document.getElementById("scoreboard-list").innerHTML = list;
+    }
+
+    
 }
 
 // Alter modal content styling if playing on chrome or edge browsers for a perfect overlay - else do nothing
