@@ -105,7 +105,7 @@ function preload() {
     this.load.audio("hitAlien", ["assets/media/hit-hostile-sound.wav"]);
     this.load.audio("lostLife", ["assets/media/lost-life-sound.wav"]);
     this.load.audio("spaceshipLaser", ["assets/media/spaceship-laser-sound.wav"]);
-    this.load.audio("ufoSound", ["assets/media/ufo-sound.wav"])
+    this.load.audio("ufoSound", ["assets/media/ufo-sound.wav"]);
 }
 
 //Set variables for gameplay
