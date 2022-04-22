@@ -18,7 +18,7 @@
 
 - JavaScript
   - No errors were found when passing through the official [JSHint](https://jshint.com/)
-  - The validator service wasn't able to recognise references to the Phaser 3 API, resulting in an incorrect result from JSHint of 19 undefined variables and one unused variable.
+  - The validator service wasn't able to recognise references to the Phaser 3 API, resulting in an incorrect result from JSHint of 24 undefined variables and one unused variable.
     >![script.js](documentation/testing/javascript-validation-screenshot.png)
 
 ***
