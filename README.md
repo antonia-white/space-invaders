@@ -162,7 +162,7 @@ The site was deployed to GitHub pages. The steps to deploy are as follows:
   - From the source section drop-down menu, select the **Main** Branch, then click "Save".
   - The page will be automatically refreshed with a detailed ribbon display to indicate the successful deployment.
 
-The live link can be found [here](https://antonia-white.github.io/space-invaders/).cc
+The live link can be found [here](https://antonia-white.github.io/space-invaders/)
 
 ### Local Deployment
 
@@ -173,6 +173,8 @@ In order to make a local copy of this project, you can clone it. In your IDE Ter
 Alternatively, if using Gitpod, you can click below to create your own workspace using this repository.
 
 [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/antonia-white/space-invaders)
+
+How to install JEST and run the tests I've written
 
 ***
 
