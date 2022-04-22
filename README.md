@@ -1,9 +1,8 @@
 # Space Invaders
 
-Overview
+This website was developed to display the game Space Invaders, a spaceship shooter game. Users may visit this website to experience playing the classic retro game of space invaders with some unique twists - such as directed enemy fire. The target audience for this game is those seeking a classic retro arcade game fix or simply those looking for a simple and quick slice of entertainment. The site displays local high scores which adds a competitive element to the game. Additionally, the aliens that shoot at the player do so with with increasing speed, this feature adds a drive to complete the game faster as the game gets increasingly more difficult with time.
 
-Target audience
-Why this website is useful
+To experience the game, please visit the deployed site [here](https://antonia-white.github.io/space-invaders/)
 
 ![Responsive Mockup](documentation/testing/responsive-mockup.png)
 
@@ -152,7 +151,7 @@ The site was deployed to GitHub pages. The steps to deploy are as follows:
   - From the source section drop-down menu, select the **Main** Branch, then click "Save".
   - The page will be automatically refreshed with a detailed ribbon display to indicate the successful deployment.
 
-The live link can be found [here](https://antonia-white.github.io/space-invaders/).
+The live link can be found [here](https://antonia-white.github.io/space-invaders/).cc
 
 ### Local Deployment
 
