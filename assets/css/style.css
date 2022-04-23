@@ -216,3 +216,14 @@ em {
 #remove-bullet {
     list-style-type: none;
 }
+
+#footer-content {
+    font-family: 'Roboto', sans-serif;
+    color: #1f1f1f;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
