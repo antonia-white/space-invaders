@@ -5,7 +5,7 @@
 ## Validator Testing 
 
 - HTML
-  - No errors were returned in the index.html file when passing through the official [FreeFormatter's Validator](https://www.freeformatter.com/html-validator.html)
+  - No errors were returned in the index.html file when passing through the official [W3C's HTML Validator](https://validator.w3.org/nu/?doc=https%3A%2F%2Fantonia-white.github.io%2Fspace-invaders%2F)
 
     >![index.html](documentation/testing/html-validation-screenshot.png)
 
