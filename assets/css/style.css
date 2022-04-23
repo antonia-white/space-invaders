@@ -227,3 +227,18 @@ em {
     position: relative;
     z-index: 2;
 }
+
+#volume-button {
+    height: 40px;
+    width: 40px;
+    margin-left:20px;
+    background-image: url('../media/audio-off.png');
+    background-position: center;
+    background-size: 30px;
+    background-repeat: no-repeat;
+}
+
+#volume-button:hover,
+#volume-button:focus {
+    cursor: pointer;
+}
