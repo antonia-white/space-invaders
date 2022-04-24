@@ -27,10 +27,25 @@
 
 Automated tests were ran using the Jest framework. I fully acknowledge and understand that, in a real-world scenario, an extensive set of Jest tests would be more comprehensive.
 
-# How to Install Jest
+### How to Install Jest
+In the terminal create the json file by running
+```
+npm init -y
+```
+Next, to install Jest run
+```
+npm i --save-dev jest
+```
+In the package.json file, replace the value of test with the string "jest"
+To run Jest and the built tests simply run
+```
+npm test
+```
+in the terminal.
+
 test one major component of application
 
-# Space Invaders Jest Tests
+### Space Invaders Jest Tests
 add screenshot of running JEST tests in terminal - results
 
 ***
