@@ -1,0 +1,23 @@
+{
+  "name": "space-invaders",
+  "version": "1.0.0",
+  "description": "This website was developed to display the game Space Invaders, a spaceship shooter game. Users may visit this website to experience playing the classic retro game of space invaders with some unique twists - such as directed enemy fire. The target audience for this game is those seeking a classic retro arcade game fix or simply those looking for a simple and quick slice of entertainment. The site displays local high scores which adds a competitive element to the game. Additionally, the aliens that shoot at the player do so with with increasing speed, this feature adds a drive to complete the game faster as the game gets increasingly more difficult with time.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/antonia-white/space-invaders.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/antonia-white/space-invaders/issues"
+  },
+  "homepage": "https://github.com/antonia-white/space-invaders#readme",
+  "devDependencies": {
+    "jest": "^27.5.1"
+  }
+}
