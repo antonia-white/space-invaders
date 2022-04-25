@@ -160,11 +160,21 @@ function create() {
     });
 
     //Add sounds
-    gameOver = this.sound.add("gameOver", {loop: false});
-    hitAlien = this.sound.add("hitAlien", {loop: false});
-    lostLife = this.sound.add("lostLife", {loop: false});
-    spaceshipLaser = this.sound.add("spaceshipLaser", {loop: false});
-    ufoSound = this.sound.add("ufoSound", {loop: true});
+    gameOver = this.sound.add("gameOver", {
+        loop: false
+    });
+    hitAlien = this.sound.add("hitAlien", {
+        loop: false
+    });
+    lostLife = this.sound.add("lostLife", {
+        loop: false
+    });
+    spaceshipLaser = this.sound.add("spaceshipLaser", {
+        loop: false
+    });
+    ufoSound = this.sound.add("ufoSound", {
+        loop: true
+    });
 
 
     //Shoot event listner
@@ -210,7 +220,10 @@ function shoot() {
         if (isFiring == false) { //Prevents rapid firing
             manageLaser(scene.physics.add.sprite(spaceship.x, spaceship.y + -40, "laser"));
             isFiring = true;
-            spaceshipLaser.play();
+            //Play sound if audio is checked
+            if (document.getElementById("audio-check").checked === true) {
+                spaceshipLaser.play();
+            }
         }
     }
 
@@ -297,8 +310,10 @@ function manageAlienLaser(laser, enemy) {
                 clearInterval(i);
                 //reduce lives by 1
                 lives--;
-                //play lost life sound
-                lostLife.play();
+                //play lost life sound if audio checked
+                if (document.getElementById("audio-check").checked === true) {
+                    lostLife.play();
+                }
                 //display new lives text
                 livesText.setText("Lives: " + lives);
 
@@ -321,12 +336,14 @@ function manageAlienLaser(laser, enemy) {
 
 //Taken damage to make spaceship flash red
 function takenDamange() {
-spaceship.tint = 0xb80404;
-this.scene.time.addEvent({
-    delay: 150,
-    callback: function(){ spaceship.clearTint(); },
-    callbackScope: spaceship,
- });
+    spaceship.tint = 0xb80404;
+    this.scene.time.addEvent({
+        delay: 150,
+        callback: function () {
+            spaceship.clearTint();
+        },
+        callbackScope: spaceship,
+    });
 }
 
 //Set alien fire to every 3seconds
@@ -376,7 +393,10 @@ function manageUfo(ufo) {
         ufo.isDestroyed = true;
         ufoSound.stop();
     });
-    ufoSound.play();
+    ////Play sound if audio is checked
+    if (document.getElementById("audio-check").checked === true) {
+        ufoSound.play();
+    }
 }
 
 //PLAYER FIRE
@@ -393,8 +413,10 @@ function manageLaser(laser) {
                     isFiring = false;
                     //destroy alien on impact
                     enemy.destroy();
-                    //Play sound
-                    hitAlien.play();
+                    //Play sound if audio checked
+                    if (document.getElementById("audio-check").checked === true) {
+                        hitAlien.play();
+                    }
                     //increment score
                     score++;
                     //display new score
@@ -428,8 +450,10 @@ function manageLaser(laser) {
                     ufo.isDestroyed = true;
                     //Stop ufo sound
                     ufoSound.stop();
-                    //Play hit sound
-                    hitAlien.play();
+                    //Play hit sound if audio checked
+                    if (document.getElementById("audio-check").checked === true) {
+                        hitAlien.play();
+                    }
                     //Increment score
                     score++;
                     ufoCount++;
@@ -470,8 +494,10 @@ function endGame(con) {
     hitAlien.stop();
     lostLife.stop();
     ufoSound.stop();
-    //Plays end game sound
-    gameOver.play();
+    //Plays end game sound if audio checked
+    if (document.getElementById("audio-check").checked === true) {
+        gameOver.play();
+    }
     //Display end game screen
     endGameModal.style.display = "block";
     //Adds outcome and score to display
@@ -502,6 +528,8 @@ function createHighScores(score) {
     //Save highscores into local storage
     localStorage.setItem('highScores', JSON.stringify(highScores));
 }
+// Export create highscores function for jest testing
+// module.exports = createHighScores;
 
 // Change scoreboard HTML to list of 10 ordered highscores
 function makeScoreboard() {
@@ -510,8 +538,10 @@ function makeScoreboard() {
         document.getElementById("scoreboard-list").innerHTML = list;
     }
 
-    
+
 }
+// Export make scoreboard function for jest testing
+// module.exports = makeScoreboard;
 
 // Alter modal content styling if playing on chrome or edge browsers for a perfect overlay - else do nothing
 if ((window.navigator.userAgent.indexOf("Chrome") > -1) || (window.navigator.userAgent.indexOf("Edge/") > -1)) {
