@@ -36,11 +36,16 @@
             <button id="startBtn" class="homeBtn">Start</button>
             <button id="instructionsBtn" class="homeBtn">Instructions</button>
             <button id="scoreboardBtn" class="homeBtn">Scoreboard</button>
-            <!-- Audio on/off slider -->
-            <label class="switch">
-                <input id="audio-check" type="checkbox">
-                <span class="slider round"></span>
-              </label>
+            <!-- Audio image try putting all in div -->
+            <div id="audio-box">
+                <img src="assets/media/white-audio-off.png" class="audio-img" id="audio-off-img">
+                <img src="assets/media/white-audio-on.png" class="audio-img" id="audio-on-img">
+                <!-- Audio on/off slider -->
+                <label class="switch">
+                    <input id="audio-check" type="checkbox" onchange="setAudioImage(this)">
+                    <span class="slider round"></span>
+                </label>
+            </div>
         </div>
 
     </aside>
