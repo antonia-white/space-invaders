@@ -43,6 +43,8 @@ npm test
 ```
 in the terminal.
 
+You can read more about how to set up Jest using their official documentation, [here](https://jestjs.io/docs/getting-started).
+
 test one major component of application
 
 ### Space Invaders Jest Tests
