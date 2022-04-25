@@ -20,6 +20,17 @@ window.onload = function () {
     homeModal.style.display = "block";
 };
 
+// Set audio image
+function setAudioImage(checkbox) {
+    if (checkbox.checked === true) {
+        document.getElementById("audio-off-img").style.display = "none";
+        document.getElementById("audio-on-img").style.display = "block";
+    } else if (checkbox.checked === false) {
+        document.getElementById("audio-off-img").style.display = "block";
+        document.getElementById("audio-on-img").style.display = "none";
+    }
+}
+
 // When the user clicks on the instructions button, open the instructions modal
 instructionsBtn.onclick = function () {
     homeModal.style.display = "none";
@@ -533,7 +544,7 @@ function createHighScores(score) {
 
 // Change scoreboard HTML to list of 10 ordered highscores
 function makeScoreboard() {
-    if (JSON.parse(localStorage?.getItem("highScores"))) {
+    if (JSON.parse(localStorage ?.getItem("highScores"))) {
         let list = `<li>${JSON.parse(localStorage?.getItem("highScores")).join("</li><li>")}</li>`;
         document.getElementById("scoreboard-list").innerHTML = list;
     }
