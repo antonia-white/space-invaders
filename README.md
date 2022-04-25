@@ -191,7 +191,8 @@ How to install JEST and run the tests I've written
   - [Array manipulation and sorting](https://stackoverflow.com/questions/1063007/how-to-sort-an-array-of-integers-correctly)
 - Various snippets of code from users of other sites, including but not limited to:
   - [Flashing a sprite at HTML 5 Gave Devs](https://www.html5gamedevs.com/topic/44310-why-flashing-black-instead-of-red-in-this-tween/)
-- Multiple useful articles at [w3schools](https://www.w3schools.com/)
+- Multiple useful articles at [w3schools](https://www.w3schools.com/), including but not limited to:
+  - [How to create a toggle switch](https://www.w3schools.com/howto/howto_css_switch.asp)
 - Using and manipulating data in local storage was taught by James Q Quick's tutorial found [here](https://www.youtube.com/watch?v=DFhmNLKwwGw&t=543s)
 - Game logic was influenced by vbs office's tutorial found [here](https://www.youtube.com/watch?v=8xMBzj8uZ7o&list=LL&index=1)
 
