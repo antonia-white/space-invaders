@@ -1,67 +1,5 @@
 /* jshint esversion: 8 */
 
-//MODALS
-// Get the modals
-let homeModal = document.getElementById("homeModal");
-let instructionsModal = document.getElementById("instructionsModal");
-let scoreboardModal = document.getElementById("scoreboardModal");
-let endGameModal = document.getElementById("endGameModal");
-
-//Get the buttons
-let startBtn = document.getElementById("startBtn");
-let instructionsBtn = document.getElementById("instructionsBtn");
-let scoreboardBtn = document.getElementById("scoreboardBtn");
-let instructionsBackBtn = document.getElementById("instructionsBackBtn");
-let scoreboardBackBtn = document.getElementById("scoreboardBackBtn");
-let homeScreenBtn = document.getElementById("homeScreenBtn");
-
-// When the user loads open the homeModal
-window.onload = function () {
-    homeModal.style.display = "block";
-};
-
-// Set audio image
-function setAudioImage(checkbox) {
-    if (checkbox.checked === true) {
-        document.getElementById("audio-off-img").style.display = "none";
-        document.getElementById("audio-on-img").style.display = "block";
-    } else if (checkbox.checked === false) {
-        document.getElementById("audio-off-img").style.display = "block";
-        document.getElementById("audio-on-img").style.display = "none";
-    }
-}
-
-// When the user clicks on the instructions button, open the instructions modal
-instructionsBtn.onclick = function () {
-    homeModal.style.display = "none";
-    instructionsModal.style.display = "block";
-};
-
-//When scoreboard button clicked show scoreboard
-scoreboardBtn.onclick = function () {
-    homeModal.style.display = "none";
-    scoreboardModal.style.display = "block";
-    makeScoreboard();
-};
-
-//When back button clicked hide instructions modal and show homeModal
-instructionsBackBtn.onclick = function () {
-    instructionsModal.style.display = "none";
-    homeModal.style.display = "block";
-};
-
-//When scoreboards back button clicked hide scoreboard modal and show homeModal
-scoreboardBackBtn.onclick = function () {
-    scoreboardModal.style.display = "none";
-    homeModal.style.display = "block";
-};
-
-// When home button clicked hide end game modal and show home modal
-homeScreenBtn.onclick = function () {
-    endGameModal.style.display = "none";
-    location.reload();
-};
-
 //GAME
 // Phaser configuration
 let config = {
@@ -195,9 +133,9 @@ function create() {
     scene.input.on('pointerdown', shoot);
 
     /**Start game function activated when start game button clicked */
-    startBtn.onclick = function () {
+    document.getElementById("startBtn").onclick = function () {
         //Remove home screen
-        homeModal.style.display = "none";
+        document.getElementById("homeModal").style.display = "none";
         if (isLive === false) {
             isLive = true;
             setInterval(makeUfo, 15000);
@@ -510,7 +448,7 @@ function endGame(con) {
         gameOver.play();
     }
     //Display end game screen
-    endGameModal.style.display = "block";
+    document.getElementById("endGameModal").style.display = "block";
     //Adds outcome and score to display
     document.getElementById("end-game-message").innerHTML += `You ${con}! Score: ${score}`;
     createHighScores(score);
@@ -546,8 +484,6 @@ function makeScoreboard() {
         let list = `<li>${JSON.parse(localStorage?.getItem("highScores")).join("</li><li>")}</li>`;
         document.getElementById("scoreboard-list").innerHTML = list;
     }
-
-
 }
 
 // Alter modal content styling if playing on chrome or edge browsers for a perfect overlay - else do nothing
@@ -557,8 +493,3 @@ if ((window.navigator.userAgent.indexOf("Chrome") > -1) || (window.navigator.use
         modalContent[i].style.margin = "186px auto";
     }
 }
-
-// Export make scoreboard function for jest testing
-if (typeof module !== "undefined") module.exports = {
-    makeScoreboard
-};
