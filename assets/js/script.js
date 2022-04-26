@@ -539,8 +539,6 @@ function createHighScores(score) {
     //Save highscores into local storage
     localStorage.setItem('highScores', JSON.stringify(highScores));
 }
-// Export create highscores function for jest testing
-// module.exports = createHighScores;
 
 // Change scoreboard HTML to list of 10 ordered highscores
 function makeScoreboard() {
@@ -551,8 +549,6 @@ function makeScoreboard() {
 
 
 }
-// Export make scoreboard function for jest testing
-// module.exports = makeScoreboard;
 
 // Alter modal content styling if playing on chrome or edge browsers for a perfect overlay - else do nothing
 if ((window.navigator.userAgent.indexOf("Chrome") > -1) || (window.navigator.userAgent.indexOf("Edge/") > -1)) {
@@ -561,3 +557,8 @@ if ((window.navigator.userAgent.indexOf("Chrome") > -1) || (window.navigator.use
         modalContent[i].style.margin = "186px auto";
     }
 }
+
+// Export make scoreboard function for jest testing
+if (typeof module !== "undefined") module.exports = {
+    makeScoreboard
+};
