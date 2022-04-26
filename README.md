@@ -155,6 +155,40 @@ To view all testing documentation, refer to [TESTING.md](TESTING.md).
 
 ***
 
+## Automated Testing 
+
+Automated tests were ran using the Jest framework. I fully acknowledge and understand that, in a real-world scenario, an extensive set of Jest tests would be more comprehensive.
+
+### How to Install Jest
+In the terminal create a json file by running:
+```
+npm init
+```
+Click through the default configurations, set Jest as the test command by entering the string "jest" when cued.
+
+Once this is done, to install Jest as a development dependency run:
+```
+npm i --save-dev jest
+```
+To run Jest and the built tests simply run:
+```
+npm test
+```
+in the terminal.
+
+Note: You may need to manually install the jsdom environment. To do this simply run:
+```
+npm i jest-environment-jsdom
+```
+in the terminal when prompted after Jest installation.
+
+You can read more about how to set up Jest using their official documentation, [here](https://jestjs.io/docs/getting-started).
+
+### Space Invaders Jest Tests
+add screenshot of running JEST tests in terminal - results
+
+***
+
 ## Deployment
 
 The site was deployed to GitHub pages. The steps to deploy are as follows: 
