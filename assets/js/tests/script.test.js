@@ -18,5 +18,12 @@ describe("modals open and buttons navigate to the correct modal", () => {
         expect("scoreboardModal" in document).toBeDefined();
         expect("endGameModal" in document).toBeDefined();
     });
-    test("modals contain correct ids")
+    // test("modals contain correct ids")
+})
+
+// Audio toggle
+describe("audio checkbox toggles, returning a boolean value as expected", () => {
+    test("button exists", () => {
+        expect("audio-check" in document).toBeDefined();
+    });
 })
