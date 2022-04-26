@@ -19,11 +19,14 @@ describe("modals open and buttons navigate to the correct modal", () => {
         expect("endGameModal" in document).toBeDefined();
     });
     // test("modals contain correct ids")
-})
+});
 
 // Audio toggle
 describe("audio checkbox toggles, returning a boolean value as expected", () => {
     test("button exists", () => {
         expect("audio-check" in document).toBeDefined();
+    });
+    test("audio checkbox is not ticked", () => {
+        expect("audio-check" in document).toBeFalsy();
     });
 })
