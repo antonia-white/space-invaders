@@ -109,6 +109,13 @@ As a user of the Space Invader game, I want to:
 
     >![Lives Counter](documentation/testing/lives-counter-screenshot.png)
 
+- __Sound Settings__
+  
+  - The sound settings are found on the Home Menu. This feature allows users to toggle game sounds on or off, dpending on their personal preference. The default setting is audio off. An icon will appear abouve the slider to inform the user of the current setting applied.
+
+    >![Audio Off](documentation/testing/toggle-audio-off-screenshot.png)
+    >![Audio On](documentation/testing/toggle-audio-on-screenshot.png) 
+
 ### Features Left to Implement 
 
 - Online scoreboard
@@ -131,8 +138,6 @@ As a user of the Space Invader game, I want to:
 - Reduce velocity of spaceship when dragging
   - Provide air resistance to dragging the spaceship with a cursor or finger on touchscreen devices. A present, because of this gameplay is currently easier on tablet. 
   - This is a finniky feature to implement and one I havn't been successful with so far. I would acheive this with more time by researching articles such as [this](https://dustinpfister.github.io/2018/10/30/phaser-physics-drag/).
-
-- time multiplier for score
 
 ***
 
