@@ -62,9 +62,9 @@ homeScreenBtn.onclick = function () {
     location.reload();
 };
 
-// Export make scoreboard function for jest testing
+// Export setAudioImage function for jest testing
 if (typeof module !== "undefined") module.exports = {
     setAudioImage
 };
 
-// module.exports = { setAudioImage };
+module.exports = { setAudioImage };
