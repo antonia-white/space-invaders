@@ -166,7 +166,7 @@ I also attempted to export functions that exclude any mention of Phaser but this
 
 In hindsight, if I had known about the new change to marking criteria before starting and making considerable progress with this website, I would have developed a game using an API that was compatible with Jest or alternitivley I would have created a simpler game or quiz in vanilla JavaScript so that I could meet the assessment criteria to a higher standard.
 
-However, having not had that foresight, I have attempted to test some JavaScript functionality by moving the code that controls modal functionality (i.e., the code that controls the display of each modal) into a new js file named "modals.js". This file (and of course the index.html file) is what was tested with Jest.
+However, having not had that foresight, I have attempted to test some JavaScript functionality by moving the code that controls modal functionality (i.e., the code that controls the display of each modal) into a new js file named "modals.js". This file (and of course the index.html file) is what was tested with Jest. This itself ran into many problems and errors, I would like to thank both Sean and Kevin at Code Institute's tutoring support for their support and attempts to problem solve my unusual problems with Jest.
 
 ### How to Install Jest
 In the terminal create a json file by running:
@@ -194,7 +194,37 @@ in the terminal when prompted after Jest installation.
 You can read more about how to set up Jest using their official documentation, [here](https://jestjs.io/docs/getting-started).
 
 ### Space Invaders Jest Tests
-add screenshot of running JEST tests in terminal - results
+To see the tests that were conducted please refer to [modals.test.js](modals.test.js)
+
+- Test that the modals exist in the html file
+  - The user will not be able to start the game or navigate around the modals if the modals are not defined.
+    ```
+    test("modals exist", () => {
+            expect("homeModal" in document).toBeDefined();
+            expect("instructionsModal" in document).toBeDefined();
+            expect("scoreboardModal" in document).toBeDefined();
+            expect("endGameModal" in document).toBeDefined();
+        });
+    ```
+
+- Test that the audio toggle exists in the html file
+  - The user will not be able to toggle audio on and off if the checkbox is not defined in the html.
+    ```
+    test("button exists", () => {
+            expect("audio-check" in document).toBeDefined();
+        });
+    ```
+
+- Test that the audio toggler (i.e. checkbox) default loads as off (i.e. the checkbox returns false).
+  - The default setting for the game will be audio off. The user can then toggle audio on/off at will.
+    ```
+    test("audio checkbox is not ticked", () => {
+          expect("audio-check" in document).toBeFalsy();
+      });
+    ```
+
+Screenshot of these Jest tests running in the terminal:
+>![Jest Tests Results](documentation/testing/jest-tests-results.png)
 
 ***
 
