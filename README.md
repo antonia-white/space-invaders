@@ -198,7 +198,7 @@ To see the tests that were conducted please refer to [modals.test.js](modals.tes
 
 - Test that the modals exist in the html file
   - The user will not be able to start the game or navigate around the modals if the modals are not defined.
-    ```
+    ```js
     test("modals exist", () => {
             expect("homeModal" in document).toBeDefined();
             expect("instructionsModal" in document).toBeDefined();
@@ -209,7 +209,7 @@ To see the tests that were conducted please refer to [modals.test.js](modals.tes
 
 - Test that the audio toggle exists in the html file
   - The user will not be able to toggle audio on and off if the checkbox is not defined in the html.
-    ```
+    ```js
     test("button exists", () => {
             expect("audio-check" in document).toBeDefined();
         });
@@ -217,7 +217,7 @@ To see the tests that were conducted please refer to [modals.test.js](modals.tes
 
 - Test that the audio toggler (i.e. checkbox) default loads as off (i.e. the checkbox returns false).
   - The default setting for the game will be audio off. The user can then toggle audio on/off at will.
-    ```
+    ```js
     test("audio checkbox is not ticked", () => {
           expect("audio-check" in document).toBeFalsy();
       });
