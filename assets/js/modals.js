@@ -8,7 +8,6 @@ let scoreboardModal = document.getElementById("scoreboardModal");
 let endGameModal = document.getElementById("endGameModal");
 
 //Get the buttons
-let startBtn = document.getElementById("startBtn");
 let instructionsBtn = document.getElementById("instructionsBtn");
 let scoreboardBtn = document.getElementById("scoreboardBtn");
 let instructionsBackBtn = document.getElementById("instructionsBackBtn");
