@@ -84,6 +84,7 @@ As a user of the Space Invader game, I want to:
 
   - The scoreboard modal loads when the scoreboard button on the home modal is clicked. The scoreboard overlay the game area. If there is no cache in local storage of previous gameplay (i.e., if it is the first time playing the game) the scoreboard will display text indicating that there are no highscores (see below screenshot). If there is local storage of previous scores a list will show the top 10 highscores for the game (see below screenshot). The scoreboard also has a back button.
   - The scoreboard allows users to keep a record of previous highscores on that device. This adds a competitive element to the game, aiming to get a higher and higher highscore. The back button allows users to navigate back to the home menu - the back button closes the scoreboard modal and loads the home menu modal.
+  - The scoreboard modal utilises the built-in Web API [Window.localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage) to retrieve stored highscores (stored in a UTF-16 DOMString format) across browser sessions.
 
     >![Scoreboard](documentation/testing/scoreboard-screenshot.png)
     >![Empty Scoreboard](documentation/testing/empty-scoreboard-screenshot.png)
@@ -92,6 +93,7 @@ As a user of the Space Invader game, I want to:
 
   - The game is space invaders and is the main content of the website. The player in this game is a spaceship which can move on a horizontal axis at a limited velocity. The aim of the game is to clear the game area of alien enemies (which shoot directly towards the player and also move on a horizontal axis). The player must dodge oncoming fire to survive. The player can return fire to destroy enemy aliens. UFOs will occasionally fly abouve, these hostiles have a higher rate of fire and their fire has a higher velocity (aka harder to dodge). The game gets progressivley more difficult with time as the velocity of enemy alien fire increases with every shot that the aliens take.
   - The purpose of the game is to entertain.
+  - The game was built using [Phaser 3 API](https://photonstorm.github.io/phaser3-docs/).
 
     >![Gameplay](documentation/testing/gameplay-screenshot.png)
 
@@ -162,7 +164,7 @@ Automated tests were ran using the Jest framework. I fully acknowledge and under
 ```
 npm i phaser
 ```
-You can read more about this method of Phaser installation (here)[https://designcode.io/phaser-course].
+You can read more about this method of Phaser installation [here](https://designcode.io/phaser-course).
 I also attempted to export functions that exclude any mention of Phaser but this wasn't possibe. As to my knowledge and extensive reading online, there is no current way to use Jest to test Phaser games. Interestingly, I have read some discussions online that call into question the basic automated testibility of Phaser games. 
 
 In hindsight, if I had known about the new change to marking criteria before starting and making considerable progress with this website, I would have developed a game using an API that was compatible with Jest or alternitivley I would have created a simpler game or quiz in vanilla JavaScript so that I could meet the assessment criteria to a higher standard.
