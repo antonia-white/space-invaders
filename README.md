@@ -157,7 +157,16 @@ To view all testing documentation, refer to [TESTING.md](TESTING.md).
 
 ## Automated Testing 
 
-Automated tests were ran using the Jest framework. I fully acknowledge and understand that, in a real-world scenario, an extensive set of Jest tests would be more comprehensive.
+Automated tests were ran using the Jest framework. I fully acknowledge and understand that, in a real-world scenario, an extensive set of Jest tests would be more comprehensive. Space Invaders was built using Phaser's JS library. Unfortunatley Jest isn't currently 100% compatible with Phaser. At present Jest identifies any keywords that the Phaser 3 API uses as "undefined variables" and will not run past them. I made many attempts to configure Jest to be compatible with Phaser - including installing Phaser to the Node Package Manager by running the following in the terminal:
+```
+npm i phaser
+```
+You can read more about this method of Phaser installation (here)[https://designcode.io/phaser-course].
+I also attempted to export functions that exclude any mention of Phaser but this wasn't possibe. As to my knowledge and extensive reading online, there is no current way to use Jest to test Phaser games. Interestingly, I have read some discussions online that call into question the basic automated testibility of Phaser games. 
+
+In hindsight, if I had known about the new change to marking criteria before starting and making considerable progress with this website, I would have developed a game using an API that was compatible with Jest or alternitivley I would have created a simpler game or quiz in vanilla JavaScript so that I could meet the assessment criteria to a higher standard.
+
+However, having not had that foresight, I have attempted to test some JavaScript functionality by moving the code that controls modal functionality (i.e., the code that controls the display of each modal) into a new js file named "modals.js". This file (and of course the index.html file) is what was tested with Jest.
 
 ### How to Install Jest
 In the terminal create a json file by running:
