@@ -3,8 +3,6 @@
  */
 
  let setAudioImage;
-
- // const { setAudioImage } = require("../modals.js");
  
  beforeAll(() => {
      let fs = require("fs");
@@ -12,8 +10,7 @@
      document.open();
      document.write(fileContents);
      document.close();
- 
-     setAudioImage = require('../modals.js')
+     setAudioImage = require('../modals.js').setAudioImage;
  })
  
  // Modal navigation
@@ -44,11 +41,13 @@
      beforeAll(() => {
          let checkbox = document.getElementById("audio-check");
          checkbox.checked = true;
-         setAudioImage();
+         setAudioImage(checkbox);
      });
      test("expect setAudioImage function works correctly", () => {
-         expect((document.getElementById("audio-off-img").style.display).toBe("none"));
-         expect((document.getElementById("audio-on-img").style.display).toBe("block"));
+         const audioOffImage = window.getComputedStyle(document.getElementById("audio-off-img")).getPropertyValue('display');
+         const audioOnImage = window.getComputedStyle(document.getElementById("audio-on-img")).getPropertyValue('display');
+         expect(audioOffImage).toEqual("none");
+         expect(audioOnImage).toEqual("block");
      });
  });
  
