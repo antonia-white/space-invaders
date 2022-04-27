@@ -144,6 +144,7 @@ As a user of the Space Invader game, I want to:
 - [Git](https://git-scm.com/) was used for version control
 - [Am I Responsive](http://ami.responsivedesign.is/) was used to generate a mockup image
 - [Phaser 3 API](https://photonstorm.github.io/phaser3-docs/) was used for game development
+- [Window.localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage) is a built-in Web API used for storing and retrieving local highscores.
 - [Dev Tools](https://en.wikipedia.org/wiki/Web_development_tools) was used for testing and responsiveness
 - [iloveimg](https://www.iloveimg.com/) was used for resizing and cropping svg images
 
@@ -166,7 +167,7 @@ I also attempted to export functions that exclude any mention of Phaser but this
 
 In hindsight, if I had known about the new change to marking criteria before starting and making considerable progress with this website, I would have developed a game using an API that was compatible with Jest or alternitivley I would have created a simpler game or quiz in vanilla JavaScript so that I could meet the assessment criteria to a higher standard.
 
-However, having not had that foresight, I have attempted to test some JavaScript functionality by moving the code that controls modal functionality (i.e., the code that controls the display of each modal) into a new js file named "modals.js". This file (and of course the index.html file) is what was tested with Jest. This itself ran into many problems and errors, I would like to thank both Sean and Kevin at Code Institute's tutoring support for their support and attempts to problem solve my unusual problems with Jest.
+However, having not had that foresight, I have attempted to test some JavaScript functionality by moving the code that controls modal functionality (i.e., the code that controls the display of each modal) into a new js file named "modals.js". This file (and of course the index.html file) is what was tested with Jest.
 
 ### How to Install Jest
 In the terminal create a json file by running:
@@ -221,6 +222,23 @@ To see the tests that were conducted please refer to [modals.test.js](modals.tes
     test("audio checkbox is not ticked", () => {
           expect("audio-check" in document).toBeFalsy();
       });
+    ```
+
+- Test that the setAudioImage function works
+  - This function displays the appropriate image when a user has toggled the audio to on/off. The image displayed shows the user if sound for the game has been enabled or not. The default setting is sound off (see abouve test). When the user turns sound on an icon should display to inform the user of their change.
+    ```js
+     describe("audio image displays correctly", () => {
+     beforeAll(() => {
+         let checkbox = document.getElementById("audio-check");
+         checkbox.checked = true;
+         setAudioImage(checkbox);
+     });
+     test("expect setAudioImage function works correctly", () => {
+         const audioOffImage = window.getComputedStyle(document.getElementById("audio-off-img")).getPropertyValue('display');
+         const audioOnImage = window.getComputedStyle(document.getElementById("audio-on-img")).getPropertyValue('display');
+         expect(audioOffImage).toEqual("none");
+         expect(audioOnImage).toEqual("block");
+     });
     ```
 
 Screenshot of these Jest tests running in the terminal:
@@ -283,5 +301,6 @@ How to install JEST and run the tests I've written
 
 - My mentor Tim
 - My friends and family for testing the site and helping me identify bugs
+- Sean and Kevin at Code Institute's tutoring support for their help with using Jest.
 
 ***
