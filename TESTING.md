@@ -5,19 +5,19 @@
 ## Validator Testing 
 
 - HTML
-  - No errors were returned in the index.html file when passed through the official [W3C's HTML Validator](https://validator.w3.org/nu/?doc=https%3A%2F%2Fantonia-white.github.io%2Fspace-invaders%2F)
+  - No errors were returned in the index.html file when passed through the official [W3C's HTML Validator](https://validator.w3.org/nu/?doc=https%3A%2F%2Fantonia-white.github.io%2Fspace-invaders%2F).
 
     >![index.html](documentation/testing/html-validation-screenshot.png)
 
 
 - CSS
-  - No errors were found in the style.css file when passed through the official [Jigsaw validator](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fantonia-white.github.io%2Fspace-invaders%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
+  - No errors were found in the style.css file when passed through the official [Jigsaw validator](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fantonia-white.github.io%2Fspace-invaders%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en).
   
     >![style.css](documentation/testing/css-validation-screenshot.png)
 
 
 - JavaScript
-  - No errors were found when both script.js and modal.js files were passed through the official [JSHint](https://jshint.com/)
+  - No errors were found when both script.js and modal.js files were passed through the official [JSHint](https://jshint.com/).
   - The validator service wasn't able to recognise references to the Phaser 3 API in the file script.js, resulting in an incorrect result from JSHint of 24 undefined variables and one unused variable.
     >![script.js](documentation/testing/javascript-script-validation-screenshot.png)
     >![modals.js](documentation/testing/javascript-modals-validation-screenshot.png)
@@ -26,7 +26,7 @@
 
 ## Automated Testing 
 
-Automated tests were ran using the Jest framework. I fully acknowledge and understand that, in a real-world scenario, an extensive set of Jest tests would be more comprehensive. Space Invaders was built using Phaser's JS library. Unfortunatley Jest isn't currently 100% compatible with Phaser. At present Jest identifies any keywords that the Phaser 3 API uses as "undefined variables" and will not run past them. I made many attempts to configure Jest to be compatible with Phaser - including installing Phaser to the Node Package Manager by running the following in the terminal:
+Automated tests were ran using the Jest framework. I fully acknowledge and understand that, in a real-world scenario, an extensive set of Jest tests would be more comprehensive. Space Invaders was built using Phaser's JS library. Unfortunately Jest isn't currently 100% compatible with Phaser. At present Jest identifies any keywords that the Phaser 3 API uses as "undefined variables" and will not run past them. I made many attempts to configure Jest to be compatible with Phaser - including installing Phaser to the Node Package Manager by running the following in the terminal:
 ```
 npm i phaser
 ```
@@ -38,7 +38,7 @@ In hindsight, if I had known about the new change to marking criteria before sta
 However, having not had that foresight, I have been able to test some JavaScript functionality by moving the code that controls modal functionality (i.e., the code that controls the display of each modal) into a new js file named "modals.js". This file (and of course the index.html file) is what was tested with Jest.
 
 ### Space Invaders Jest Tests
-To see the tests that were conducted please refer to [modals.test.js](modals.test.js)
+To see the tests that were conducted please refer to [modals.test.js](modals.test.js).
 
 - Test that the modals exist in the html file
   - The user will not be able to start the game or navigate around the modals if the modals are not defined.
@@ -59,7 +59,7 @@ To see the tests that were conducted please refer to [modals.test.js](modals.tes
         });
     ```
 
-- Test that the audio toggler (i.e. checkbox) default loads as off (i.e. the checkbox returns false).
+- Test that the audio toggler (i.e. checkbox) default loads as off (i.e. the checkbox returns false)
   - The default setting for the game will be audio off. The user can then toggle audio on/off at will.
     ```js
     test("audio checkbox is not ticked", () => {
@@ -68,7 +68,7 @@ To see the tests that were conducted please refer to [modals.test.js](modals.tes
     ```
 
 - Test that the setAudioImage function works
-  - This function displays the appropriate image when a user has toggled the audio to on/off. The image displayed shows the user if sound for the game has been enabled or not. The default setting is sound off (see abouve test). When the user turns sound on an icon should display to inform the user of their change.
+  - This function displays the appropriate image when a user has toggled the audio to on/off. The image displayed shows the user if sound for the game has been enabled or not. The default setting is sound off (see above test). When the user turns sound on an icon should display to inform the user of their change.
     ```js
      describe("audio image displays correctly", () => {
      beforeAll(() => {
@@ -148,7 +148,7 @@ A target user of the Space Invaders game will want to:
    >Space invaders has easy to use controls accessible for keyboard and touchscreen. These controls are outlined in the instructions modal. For the user to move their spaceship on keyboard they can use A and D keys or left and right arrow keys. Alternatively a user can drag the ship with their cursor or finger if using a touch screen device. To activate the game mechanic to shoot the hostiles, a user can press SPACE on keyboard or left click on mouse. If using a touchscreen device a user can tap the game area.
 
 - [x] visit a retro looking game for an enjoyable/nostalgic experience
-   >The classic, simple look of the game alongside the logo design reminiscent of 1980s Namco arcade games acheives this.
+   >The classic, simple look of the game alongside the logo design reminiscent of 1980s Namco arcade games achieves this.
    ![Gameplay](documentation/testing/gameplay-screenshot.png)
 
 - [x] navigate through the website and game easily and fluidly
