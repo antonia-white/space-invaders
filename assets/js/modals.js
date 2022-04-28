@@ -65,5 +65,3 @@ homeScreenBtn.onclick = function () {
 if (typeof module !== "undefined") module.exports = {
     setAudioImage
 };
-
-module.exports = { setAudioImage };
