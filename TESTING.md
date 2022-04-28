@@ -5,19 +5,19 @@
 ## Validator Testing 
 
 - HTML
-  - No errors were returned in the index.html file when passing through the official [W3C's HTML Validator](https://validator.w3.org/nu/?doc=https%3A%2F%2Fantonia-white.github.io%2Fspace-invaders%2F)
+  - No errors were returned in the index.html file when passed through the official [W3C's HTML Validator](https://validator.w3.org/nu/?doc=https%3A%2F%2Fantonia-white.github.io%2Fspace-invaders%2F)
 
     >![index.html](documentation/testing/html-validation-screenshot.png)
 
 
 - CSS
-  - No errors were found when passing through the official [Jigsaw validator](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fantonia-white.github.io%2Fspace-invaders%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
+  - No errors were found in the style.css file when passed through the official [Jigsaw validator](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fantonia-white.github.io%2Fspace-invaders%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en)
   
     >![style.css](documentation/testing/css-validation-screenshot.png)
 
 
 - JavaScript
-  - No errors were found when passing through the official [JSHint](https://jshint.com/)
+  - No errors were found when both script.js and modal.js files were passed through the official [JSHint](https://jshint.com/)
   - The validator service wasn't able to recognise references to the Phaser 3 API in the file script.js, resulting in an incorrect result from JSHint of 24 undefined variables and one unused variable.
     >![script.js](documentation/testing/javascript-script-validation-screenshot.png)
     >![modals.js](documentation/testing/javascript-modals-validation-screenshot.png)
@@ -33,9 +33,9 @@ npm i phaser
 You can read more about this method of Phaser installation [here](https://designcode.io/phaser-course).
 I also attempted to export functions that exclude any mention of Phaser but this wasn't possibe. As to my knowledge and extensive reading online, there is no current way to use Jest to test Phaser games. Interestingly, I have read some discussions online that call into question the basic automated testibility of Phaser games. 
 
-In hindsight, if I had known about the new change to marking criteria before starting and making considerable progress with this website, I would have developed a game using an API that was compatible with Jest or alternitivley I would have created a simpler game or quiz in vanilla JavaScript so that I could meet the assessment criteria to a higher standard.
+In hindsight, if I had known about the new change to marking criteria before starting and making considerable progress with this website, I would have developed a game using an API that was compatible with Jest or alternatively I would have created a simpler game or quiz in vanilla JavaScript so that I could meet the assessment criteria to a higher standard.
 
-However, having not had that foresight, I have attempted to test some JavaScript functionality by moving the code that controls modal functionality (i.e., the code that controls the display of each modal) into a new js file named "modals.js". This file (and of course the index.html file) is what was tested with Jest.
+However, having not had that foresight, I have been able to test some JavaScript functionality by moving the code that controls modal functionality (i.e., the code that controls the display of each modal) into a new js file named "modals.js". This file (and of course the index.html file) is what was tested with Jest.
 
 ### Space Invaders Jest Tests
 To see the tests that were conducted please refer to [modals.test.js](modals.test.js)
@@ -152,7 +152,7 @@ A target user of the Space Invaders game will want to:
    ![Gameplay](documentation/testing/gameplay-screenshot.png)
 
 - [x] navigate through the website and game easily and fluidly
-   >The home menu modal allows for simple navigation between modals with the click of a button. Back buttons on the instructions and scoreboard modals allow for navigation back to the home menu. Clciking the start button allows the user to begin gameplay.
+   >The home menu modal allows for simple navigation between modals with the click of a button. Back buttons on the instructions and scoreboard modals allow for navigation back to the home menu. Clicking the start button allows the user to begin gameplay.
    ![Home Menu](documentation/testing/home-menu-screenshot.png)
 
 - [x] access instructions on how to play the game and game aims
