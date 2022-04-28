@@ -163,18 +163,24 @@ To view all testing documentation, refer to [TESTING.md](TESTING.md).
 
 ***
 
-## Automated Testing 
+## Deployment
 
-Automated tests were ran using the Jest framework. I fully acknowledge and understand that, in a real-world scenario, an extensive set of Jest tests would be more comprehensive. Space Invaders was built using Phaser's JS library. Unfortunatley Jest isn't currently 100% compatible with Phaser. At present Jest identifies any keywords that the Phaser 3 API uses as "undefined variables" and will not run past them. I made many attempts to configure Jest to be compatible with Phaser - including installing Phaser to the Node Package Manager by running the following in the terminal:
-```
-npm i phaser
-```
-You can read more about this method of Phaser installation [here](https://designcode.io/phaser-course).
-I also attempted to export functions that exclude any mention of Phaser but this wasn't possibe. As to my knowledge and extensive reading online, there is no current way to use Jest to test Phaser games. Interestingly, I have read some discussions online that call into question the basic automated testibility of Phaser games. 
+The site was deployed to GitHub pages. The steps to deploy are as follows: 
+  - In the [GitHub repository](https://github.com/antonia-white/space-invaders), navigate to the Settings tab.
+  - From the source section drop-down menu, select the **Main** Branch, then click "Save".
+  - The page will be automatically refreshed with a detailed ribbon display to indicate the successful deployment.
 
-In hindsight, if I had known about the new change to marking criteria before starting and making considerable progress with this website, I would have developed a game using an API that was compatible with Jest or alternitivley I would have created a simpler game or quiz in vanilla JavaScript so that I could meet the assessment criteria to a higher standard.
+The live link can be found [here](https://antonia-white.github.io/space-invaders/)
 
-However, having not had that foresight, I have attempted to test some JavaScript functionality by moving the code that controls modal functionality (i.e., the code that controls the display of each modal) into a new js file named "modals.js". This file (and of course the index.html file) is what was tested with Jest.
+### Local Deployment
+
+In order to make a local copy of this project, you can clone it. In your IDE Terminal, type the following command to clone the repository:
+
+- `git clone https://github.com/antonia-white/space-invaders.git`
+
+Alternatively, if using Gitpod, you can click below to create your own workspace using this repository.
+
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/antonia-white/space-invaders)
 
 ### How to Install Jest
 In the terminal create a json file by running:
@@ -200,79 +206,6 @@ npm i jest-environment-jsdom
 in the terminal when prompted after Jest installation.
 
 You can read more about how to set up Jest using their official documentation, [here](https://jestjs.io/docs/getting-started).
-
-### Space Invaders Jest Tests
-To see the tests that were conducted please refer to [modals.test.js](modals.test.js)
-
-- Test that the modals exist in the html file
-  - The user will not be able to start the game or navigate around the modals if the modals are not defined.
-    ```js
-    test("modals exist", () => {
-            expect("homeModal" in document).toBeDefined();
-            expect("instructionsModal" in document).toBeDefined();
-            expect("scoreboardModal" in document).toBeDefined();
-            expect("endGameModal" in document).toBeDefined();
-        });
-    ```
-
-- Test that the audio toggle exists in the html file
-  - The user will not be able to toggle audio on and off if the checkbox is not defined in the html.
-    ```js
-    test("button exists", () => {
-            expect("audio-check" in document).toBeDefined();
-        });
-    ```
-
-- Test that the audio toggler (i.e. checkbox) default loads as off (i.e. the checkbox returns false).
-  - The default setting for the game will be audio off. The user can then toggle audio on/off at will.
-    ```js
-    test("audio checkbox is not ticked", () => {
-          expect("audio-check" in document).toBeFalsy();
-      });
-    ```
-
-- Test that the setAudioImage function works
-  - This function displays the appropriate image when a user has toggled the audio to on/off. The image displayed shows the user if sound for the game has been enabled or not. The default setting is sound off (see abouve test). When the user turns sound on an icon should display to inform the user of their change.
-    ```js
-     describe("audio image displays correctly", () => {
-     beforeAll(() => {
-         let checkbox = document.getElementById("audio-check");
-         checkbox.checked = true;
-         setAudioImage(checkbox);
-     });
-     test("expect setAudioImage function works correctly", () => {
-         const audioOffImage = window.getComputedStyle(document.getElementById("audio-off-img")).getPropertyValue('display');
-         const audioOnImage = window.getComputedStyle(document.getElementById("audio-on-img")).getPropertyValue('display');
-         expect(audioOffImage).toEqual("none");
-         expect(audioOnImage).toEqual("block");
-     });
-    ```
-
-Screenshot of these Jest tests running in the terminal:
->![Jest Tests Results](documentation/testing/jest-tests-results.png)
-
-***
-
-## Deployment
-
-The site was deployed to GitHub pages. The steps to deploy are as follows: 
-  - In the [GitHub repository](https://github.com/antonia-white/space-invaders), navigate to the Settings tab.
-  - From the source section drop-down menu, select the **Main** Branch, then click "Save".
-  - The page will be automatically refreshed with a detailed ribbon display to indicate the successful deployment.
-
-The live link can be found [here](https://antonia-white.github.io/space-invaders/)
-
-### Local Deployment
-
-In order to make a local copy of this project, you can clone it. In your IDE Terminal, type the following command to clone the repository:
-
-- `git clone https://github.com/antonia-white/space-invaders.git`
-
-Alternatively, if using Gitpod, you can click below to create your own workspace using this repository.
-
-[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/antonia-white/space-invaders)
-
-How to install JEST and run the tests I've written
 
 ***
 
