@@ -11,7 +11,7 @@
      document.write(fileContents);
      document.close();
      setAudioImage = require('../modals.js').setAudioImage;
- })
+ });
  
  // Modal navigation
  describe("modals open and buttons navigate to the correct modal", () => {
@@ -34,7 +34,7 @@
      test("audio checkbox is not ticked", () => {
          expect("audio-check" in document).toBeFalsy();
      });
- })
+ });
  
  // Audio image
  describe("audio image displays correctly", () => {
