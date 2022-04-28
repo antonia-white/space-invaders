@@ -76,13 +76,13 @@ As a user of the Space Invader game, I want to:
 - __Instructions__
 
   - The instructions modal loads when the instructions button on the home modal is clicked. The instructions overlay the game area. The instructions modal has scrollable text and a back button.
-  - The instuctions modal content holds instructions and controls on how to play space invaders, wether on a keyboard or touchscreen device. The text is written as if it is an incomming message to the spaceship (the ship represents the player in the game), this allows some pre-text to the game to be established and gives a more immersive experience. The back button allows users to navigate back to the home menu - the back button closes the instructions modal and loads the home menu modal.
+  - The instuctions modal content holds instructions and controls on how to play space invaders, whether on a keyboard or touchscreen device. The text is written as if it is an incomming message to the spaceship (the ship represents the player in the game), this allows some pre-text to the game to be established and gives a more immersive experience. The back button allows users to navigate back to the home menu - the back button closes the instructions modal and loads the home menu modal.
 
     >![Instructions](documentation/testing/instructions-screenshot.png)
 
 - __Scoreboard__
 
-  - The scoreboard modal loads when the scoreboard button on the home modal is clicked. The scoreboard overlay the game area. If there is no cache in local storage of previous gameplay (i.e., if it is the first time playing the game) the scoreboard will display text indicating that there are no highscores (see below screenshot). If there is local storage of previous scores a list will show the top 10 highscores for the game (see below screenshot). The scoreboard also has a back button.
+  - The scoreboard modal loads when the scoreboard button on the home modal is clicked. The scoreboard overlays the game area. If there is no cache in local storage of previous gameplay (i.e., if it is the first time playing the game) the scoreboard will display text indicating that there are no highscores (see below screenshot). If there is local storage of previous scores a list will show the top 10 highscores for the game (see below screenshot). The scoreboard also has a back button.
   - The scoreboard allows users to keep a record of previous highscores on that device. This adds a competitive element to the game, aiming to get a higher and higher highscore. The back button allows users to navigate back to the home menu - the back button closes the scoreboard modal and loads the home menu modal.
   - The scoreboard modal utilises the built-in Web API [Window.localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage) to retrieve stored highscores (stored in a UTF-16 DOMString format) across browser sessions.
 
@@ -91,7 +91,7 @@ As a user of the Space Invader game, I want to:
 
 - __The Game__
 
-  - The game is space invaders and is the main content of the website. The player in this game is a spaceship which can move on a horizontal axis at a limited velocity. The aim of the game is to clear the game area of alien enemies (which shoot directly towards the player and also move on a horizontal axis). The player must dodge oncoming fire to survive. The player can return fire to destroy enemy aliens. UFOs will occasionally fly abouve, these hostiles have a higher rate of fire and their fire has a higher velocity (aka harder to dodge). The game gets progressivley more difficult with time as the velocity of enemy alien fire increases with every shot that the aliens take.
+  - The game is space invaders and is the main content of the website. The player in this game is a spaceship which can move on a horizontal axis at a limited velocity. The aim of the game is to clear the game area of alien enemies (which shoot directly towards the player and also move on a horizontal axis). The player must dodge oncoming fire to survive. The player can return fire to destroy enemy aliens. UFOs will occasionally fly above, these hostiles have a higher rate of fire and their fire has a higher velocity (aka harder to dodge). The game gets progressivley more difficult with time as the velocity of enemy alien fire increases with every shot that the aliens take.
   - The purpose of the game is to entertain.
   - The game was built using [Phaser 3 API](https://photonstorm.github.io/phaser3-docs/).
 
@@ -111,7 +111,7 @@ As a user of the Space Invader game, I want to:
 
 - __Sound Settings__
   
-  - The sound settings are found on the Home Menu. This feature allows users to toggle game sounds on or off, dpending on their personal preference. The default setting is audio off. An icon will appear abouve the slider to inform the user of the current setting applied.
+  - The sound settings are found on the Home Menu. This feature allows users to toggle game sounds on or off, dpending on their personal preference. The default setting is audio off. An icon will appear above the slider to inform the user of the current setting applied.
 
     >![Audio Off](documentation/testing/toggle-audio-off-screenshot.png)
     >![Audio On](documentation/testing/toggle-audio-on-screenshot.png) 
@@ -120,18 +120,18 @@ As a user of the Space Invader game, I want to:
 
 - Online scoreboard
   - The scoreboard would show usernames and scores of players globally who have acheived the highest scores.
-  - This feature would change the scoreboard from being on local storage (i.e., presumably one player on the one device) to global online storage. This would expand competition beyond competition on one device to copetition with all other users of the site.
-  - I currently do not have the knowledge to impliment this.
+  - This feature would change the scoreboard from being on local storage (i.e., presumably one player on the one device) to global online storage. This would expand competition beyond local to copetition with all other users of the site.
+  - I currently do not have the knowledge to implement this.
 
 - Improved accessibility for mobile gaming
   - While designing space invaders I made the conscious decision to keep the game area a 800px x 600px box across all devices. This was to maintain the classic retro arcade game feel. Having the game fill the whole viewport would make the game more accessible to other devices but I feel it hinders the gameplay quality, makes the gameplay feel more modern and not giving the experience I wanted to acheive.
-  - Some users may not have access to devices with larger screen sizes so it is important to impliment accessibility for mobile users.
+  - Some users may not have access to devices with larger screen sizes so it is important to implement accessibility for mobile users.
   - This feature hasn't been implemented as I feel it currently retracts from the gaming experience. With additional time and experimentation I would work to facilitate space invaders gameplay to suit a mobile device.
 
 - Enemy laser svg rotation towards player's spaceship
   - As you can see in current gameplay, when an alien laser is fired the laser.svg moves directly towards the player. However, the laser.svg does not rotate towards the player and remains facing directly down.
   - Adding rotation of the laser would increases immersion resulting in a better gaming experience.
-  - With additional time and research I would impliment this feature.
+  - With additional time and research I would implement this feature.
 
 - Fix unfixed bug. Please refer to [TESTING.md](TESTING.md).
 
@@ -151,7 +151,7 @@ As a user of the Space Invader game, I want to:
 - [Git](https://git-scm.com/) was used for version control
 - [Am I Responsive](http://ami.responsivedesign.is/) was used to generate a mockup image
 - [Phaser 3 API](https://photonstorm.github.io/phaser3-docs/) was used for game development
-- [Window.localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage) is a built-in Web API used for storing and retrieving local highscores.
+- [Window.localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage) is a built-in Web API used for storing and retrieving local highscores
 - [Dev Tools](https://en.wikipedia.org/wiki/Web_development_tools) was used for testing and responsiveness
 - [iloveimg](https://www.iloveimg.com/) was used for resizing and cropping svg images
 
