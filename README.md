@@ -62,13 +62,6 @@ As a user of the Space Invader game, I want to:
 
 ***
 
-## Database Model
-- Database schema for Game Base
-
- ![database schema](documentation/wireframes/gamebase-schema.png)
-
-***
-
 ## Features 
 
 ### Existing Features 
@@ -157,7 +150,6 @@ As a user of the Space Invader game, I want to:
 - [GitHub Pages](https://antonia-white.github.io/space-invaders/) was used for deployment
 - [Git](https://git-scm.com/) was used for version control
 - [Am I Responsive](http://ami.responsivedesign.is/) was used to generate a mockup image
-- [Phaser 3 API](https://photonstorm.github.io/phaser3-docs/) was used for game development
 - [Window.localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage) is a built-in Web API used for storing and retrieving local highscores
 - [Dev Tools](https://en.wikipedia.org/wiki/Web_development_tools) was used for testing and responsiveness
 - [iloveimg](https://www.iloveimg.com/) was used for resizing and cropping svg images
